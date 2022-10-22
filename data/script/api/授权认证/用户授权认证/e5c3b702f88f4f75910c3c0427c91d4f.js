@@ -19,12 +19,17 @@
       "headers": [
         {
           "key": "captcha-key",
-          "value": "83ec49ab59ba457f94c7711c6151f073",
+          "value": "748fe714bfd2466c82dab1a56dec89df",
           "description": "验证码Key"
         },
         {
+          "key": "connection",
+          "value": "keep-alive",
+          "description": ""
+        },
+        {
           "key": "content-length",
-          "value": "9092",
+          "value": "8327",
           "description": ""
         },
         {
@@ -34,7 +39,27 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 07:42:24 GMT",
+          "value": "Sat, 22 Oct 2022 09:47:33 GMT",
+          "description": ""
+        },
+        {
+          "key": "keep-alive",
+          "value": "timeout=5",
+          "description": ""
+        },
+        {
+          "key": "vary",
+          "value": "Origin",
+          "description": ""
+        },
+        {
+          "key": "x-frame-options",
+          "value": "SAMEORIGIN",
+          "description": ""
+        },
+        {
+          "key": "x-xss-protection",
+          "value": "1; mode=block",
           "description": ""
         }
       ],
@@ -64,7 +89,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-22 15:42:24",
+  "updatedAt": "2022-10-22 17:47:33",
   "createdAt": "2022-10-22 15:20:48",
   "createdBy": "",
   "updatedBy": "",
