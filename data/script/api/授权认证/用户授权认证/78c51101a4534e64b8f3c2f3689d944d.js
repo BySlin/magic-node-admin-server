@@ -77,7 +77,7 @@
       "headers": [
         {
           "key": "content-length",
-          "value": "57",
+          "value": "178",
           "description": ""
         },
         {
@@ -87,22 +87,11 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 15:46:40 GMT",
+          "value": "Sat, 22 Oct 2022 17:34:18 GMT",
           "description": ""
         }
       ],
       "children": [
-        {
-          "children": [],
-          "dataType": "Boolean",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "success",
-          "required": false,
-          "validateType": 0,
-          "value": "false"
-        },
         {
           "children": [],
           "dataType": "String",
@@ -112,7 +101,18 @@
           "key": "code",
           "required": false,
           "validateType": 0,
-          "value": "-1"
+          "value": "200"
+        },
+        {
+          "children": [],
+          "dataType": "Boolean",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "success",
+          "required": false,
+          "validateType": 0,
+          "value": "true"
         },
         {
           "children": [],
@@ -123,14 +123,81 @@
           "key": "message",
           "required": false,
           "validateType": 0,
-          "value": "验证码错误"
+          "value": "OK"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "username",
+              "required": false,
+              "validateType": 0,
+              "value": "admin"
+            },
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "password",
+              "required": false,
+              "validateType": 0,
+              "value": "123456"
+            },
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "captchaKey",
+              "required": false,
+              "validateType": 0,
+              "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
+            },
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "captchaValue",
+              "required": false,
+              "validateType": 0,
+              "value": "1234"
+            }
+          ],
+          "dataType": "Object",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "data",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "executeTime",
+          "required": false,
+          "validateType": 0,
+          "value": "4"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"success\": false,\n  \"code\": \"-1\",\n  \"message\": \"验证码错误\"\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"username\": \"admin\",\n    \"password\": \"123456\",\n    \"captchaKey\": \"e3da13a1e8b74647b0a84ca4cc5aae1f\",\n    \"captchaValue\": \"1234\"\n  },\n  \"executeTime\": 4\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -138,7 +205,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 00:45:08",
+  "updatedAt": "2022-10-23 01:37:03",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -147,7 +214,7 @@
 ================================*/
 const assert = require('assert');
 
-const captchaValue = cache.get("captcha:" + body.captchaKey);
+const captchaValue = await cache.get("captcha:" + body.captchaKey);
 
 assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
 
