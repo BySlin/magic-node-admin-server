@@ -17,7 +17,7 @@
     "@theroyalwhee0/snowman": "^1.0.0",
     "cache-manager": "^5.1.1",
     "cache-manager-ioredis": "^2.1.0",
-    "magic-node": "^1.0.0-beta71",
+    "magic-node": "^1.0.0-beta72",
     "svg-captcha": "^1.4.0",
     "typeorm": "^0.3.10"
   },
