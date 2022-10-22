@@ -7,13 +7,13 @@
   "enabled": true,
   "script": "",
   "fileLock": false,
-  "fileName": "测试jwt",
-  "path": "/jwt",
+  "fileName": "授权认证",
+  "path": "/auth",
   "description": "",
   "returnType": "",
   "updatedAt": "",
-  "createdAt": "2022-10-22 14:58:57",
+  "createdAt": "2022-10-22 15:09:25",
   "createdBy": "",
   "updatedBy": "",
-  "id": "890e1e52195040d0b3f8d05898d5c05e"
+  "id": "c47d339de4ae49c69be876d289462eaa"
 }

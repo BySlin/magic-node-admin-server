@@ -48,7 +48,12 @@ export default {
   },
   cors: {
     credentials: true,
-    exposeHeaders: ['Authorization', 'Content-Disposition', 'Date'],
+    exposeHeaders: [
+      'Authorization',
+      'Content-Disposition',
+      'Date',
+      'captcha-key',
+    ],
     origin: (ctx: Context) => {
       return ctx.header.origin;
     },
@@ -63,7 +68,7 @@ export default {
         _key: 'default', //固定值不可修改
         _dialect: 'mysql', //数据库方言
         type: 'mysql', //数据库类型
-        database: 'test', //数据库
+        database: 'magic_node', //数据库
         username: 'root', //数据库账号
         password: '12345678', //数据库密码
         port: 3306, //数据库端口

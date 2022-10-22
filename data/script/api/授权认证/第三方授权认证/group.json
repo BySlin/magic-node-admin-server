@@ -1,0 +1,19 @@
+{
+  "groupId": "c47d339de4ae49c69be876d289462eaa",
+  "type": "api",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "第三方授权认证",
+  "path": "/social",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-22 15:10:26",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "855bb62b91bf4664aff71eee72c97f13"
+}

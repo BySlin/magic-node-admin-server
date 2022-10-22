@@ -1,0 +1,19 @@
+{
+  "id": "4dac464312424adca284b3b36bceaafd",
+  "groupId": "c47d339de4ae49c69be876d289462eaa",
+  "type": "api",
+  "method": "Group",
+  "isFolder": true,
+  "enabled": true,
+  "fileLock": false,
+  "fileName": "用户授权认证",
+  "path": "",
+  "script": "",
+  "description": "",
+  "returnType": "",
+  "definition": {},
+  "updatedAt": "2022-10-22 15:31:20",
+  "createdAt": "",
+  "createdBy": "",
+  "updatedBy": ""
+}

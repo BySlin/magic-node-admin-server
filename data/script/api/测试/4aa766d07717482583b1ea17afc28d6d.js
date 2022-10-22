@@ -3,8 +3,8 @@
   "type": "api",
   "isFolder": false,
   "method": "GET",
-  "fileName": "测试jwt",
-  "path": "/testjwt",
+  "fileName": "测试",
+  "path": "/test",
   "description": "",
   "groupId": "890e1e52195040d0b3f8d05898d5c05e",
   "fileLock": false,
@@ -24,7 +24,7 @@
         },
         {
           "key": "content-length",
-          "value": "251",
+          "value": "91",
           "description": ""
         },
         {
@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 07:00:49 GMT",
+          "value": "Sat, 22 Oct 2022 08:49:05 GMT",
           "description": ""
         },
         {
@@ -101,7 +101,7 @@
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0ZTY2MTg5MmI2NTQ2ZjJhNTU4OGQ1ODBmNjc5MDRjIiwiaWF0IjoxNjY2NDIyMDQ5LCJleHAiOjE2NjY1OTQ4NDl9.-HUbi5tMFd_jW3iBPqbmuQc1OiVNIcrnizKTgkN32R4"
+          "value": "743161387848564736"
         },
         {
           "children": [],
@@ -112,14 +112,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "2"
+          "value": "4779"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0ZTY2MTg5MmI2NTQ2ZjJhNTU4OGQ1ODBmNjc5MDRjIiwiaWF0IjoxNjY2NDIyMDQ5LCJleHAiOjE2NjY1OTQ4NDl9.-HUbi5tMFd_jW3iBPqbmuQc1OiVNIcrnizKTgkN32R4\",\n  \"executeTime\": 2\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"743161387848564736\",\n  \"executeTime\": 4779\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -127,15 +127,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-22 15:00:49",
-  "createdAt": "2022-10-22 14:59:09",
+  "updatedAt": "2022-10-22 16:49:06",
+  "createdAt": "2022-10-22 16:43:16",
   "createdBy": "",
   "updatedBy": "",
-  "id": "5e0ac5442615405aaec9ad6556d81d66"
+  "id": "4aa766d07717482583b1ea17afc28d6d"
 }
 ================================*/
-const jwtService = await importModule('jwtService');
-const token = await jwtService.sign({
-  id: uuid()
+
+return db.table("test").primary("id").save({
+  name: "11111"
 });
-return token;

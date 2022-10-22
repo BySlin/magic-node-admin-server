@@ -14,9 +14,10 @@
     "@midwayjs/logger": "^2.17.0",
     "@midwayjs/security": "^3.6.0",
     "@midwayjs/validate": "^3.6.0",
+    "@theroyalwhee0/snowman": "^1.0.0",
     "cache-manager": "^5.1.1",
     "cache-manager-ioredis": "^2.1.0",
-    "magic-node": "^1.0.0-beta65",
+    "magic-node": "^1.0.0-beta68",
     "svg-captcha": "^1.4.0",
     "typeorm": "^0.3.10"
   },

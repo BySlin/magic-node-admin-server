@@ -1,0 +1,19 @@
+{
+  "id": "890e1e52195040d0b3f8d05898d5c05e",
+  "groupId": "0",
+  "type": "api",
+  "method": "Group",
+  "isFolder": true,
+  "enabled": true,
+  "fileLock": false,
+  "fileName": "测试",
+  "path": "/test",
+  "script": "",
+  "description": "",
+  "returnType": "",
+  "definition": {},
+  "updatedAt": "2022-10-22 16:43:00",
+  "createdAt": "",
+  "createdBy": "",
+  "updatedBy": ""
+}
