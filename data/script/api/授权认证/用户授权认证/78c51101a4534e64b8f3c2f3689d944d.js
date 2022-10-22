@@ -13,28 +13,7 @@
     "parameters": [],
     "options": [],
     "paths": [],
-    "headers": [
-      {
-        "description": "验证码缓存Key",
-        "expression": "",
-        "key": "captcha-key",
-        "dataType": "String",
-        "required": true,
-        "error": "",
-        "validateType": 0,
-        "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
-      },
-      {
-        "description": "验证码值",
-        "expression": "",
-        "key": "captcha-value",
-        "dataType": "String",
-        "required": true,
-        "error": "",
-        "validateType": 0,
-        "value": "123"
-      }
-    ],
+    "headers": [],
     "requestBodyDefinition": {
       "requestType": "json",
       "children": [
@@ -59,13 +38,35 @@
           "required": true,
           "validateType": 0,
           "value": "123456"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "验证码Key",
+          "error": "",
+          "expression": "",
+          "key": "captchaKey",
+          "required": true,
+          "validateType": 0,
+          "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "验证码Value",
+          "error": "",
+          "expression": "",
+          "key": "captchaValue",
+          "required": true,
+          "validateType": 0,
+          "value": "1234"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"123456\"\r\n}",
+      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"123456\",\r\n  \"captchaKey\": \"e3da13a1e8b74647b0a84ca4cc5aae1f\",\r\n  \"captchaValue\": \"1234\"\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -76,7 +77,7 @@
       "headers": [
         {
           "key": "content-length",
-          "value": "108",
+          "value": "57",
           "description": ""
         },
         {
@@ -86,22 +87,11 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 07:42:21 GMT",
+          "value": "Sat, 22 Oct 2022 15:46:40 GMT",
           "description": ""
         }
       ],
       "children": [
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "code",
-          "required": false,
-          "validateType": 0,
-          "value": "200"
-        },
         {
           "children": [],
           "dataType": "Boolean",
@@ -111,7 +101,18 @@
           "key": "success",
           "required": false,
           "validateType": 0,
-          "value": "true"
+          "value": "false"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "code",
+          "required": false,
+          "validateType": 0,
+          "value": "-1"
         },
         {
           "children": [],
@@ -122,114 +123,14 @@
           "key": "message",
           "required": false,
           "validateType": 0,
-          "value": "OK"
-        },
-        {
-          "children": [
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "password",
-              "required": false,
-              "validateType": 0,
-              "value": "123456"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "sec-ch-ua",
-              "required": false,
-              "validateType": 0,
-              "value": "\"Chromium\";v=\"106\", \"Microsoft Edge\";v=\"106\", \"Not;A=Brand\";v=\"99\""
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "content-type",
-              "required": false,
-              "validateType": 0,
-              "value": "application/json"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "sec-ch-ua-platform",
-              "required": false,
-              "validateType": 0,
-              "value": "\"Windows\""
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "sec-fetch-dest",
-              "required": false,
-              "validateType": 0,
-              "value": "empty"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "cookie",
-              "required": false,
-              "validateType": 0,
-              "value": "locale=zh-cn; MW_SESS=eyJ1c2VyIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJwZXJtaXNzaW9uIjoiZGV2ZWxvcGVyIn0sIl9leHBpcmUiOjE2NjY1MDkxMTg1MjAsIl9tYXhBZ2UiOjg2NDAwMDAwfQ==; MW_SESS.sig=O9AkHR5fIVQBWBUJ3NQnXMwvHXtMxocGxgFMdEP5e8E"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "username",
-              "required": false,
-              "validateType": 0,
-              "value": "admin"
-            }
-          ],
-          "dataType": "Object",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "data",
-          "required": false,
-          "validateType": 0,
-          "value": ""
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "executeTime",
-          "required": false,
-          "validateType": 0,
-          "value": "5"
+          "value": "验证码错误"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"username\": \"admin\",\n    \"password\": \"123456\"\n  },\n  \"executeTime\": 5\n}",
+      "json": "{\n  \"success\": false,\n  \"code\": \"-1\",\n  \"message\": \"验证码错误\"\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -237,11 +138,17 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-22 15:42:22",
+  "updatedAt": "2022-10-22 23:49:11",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
   "id": "78c51101a4534e64b8f3c2f3689d944d"
 }
 ================================*/
+const assert = require('assert');
+
+const captchaValue = cache.get("captcha:" + body.captchaKey);
+
+assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
+
 return body;
