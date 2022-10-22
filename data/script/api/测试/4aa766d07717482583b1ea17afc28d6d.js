@@ -18,13 +18,8 @@
       "responseType": "json",
       "headers": [
         {
-          "key": "connection",
-          "value": "keep-alive",
-          "description": ""
-        },
-        {
           "key": "content-length",
-          "value": "91",
+          "value": "50",
           "description": ""
         },
         {
@@ -34,27 +29,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 08:49:05 GMT",
-          "description": ""
-        },
-        {
-          "key": "keep-alive",
-          "value": "timeout=5",
-          "description": ""
-        },
-        {
-          "key": "vary",
-          "value": "Origin",
-          "description": ""
-        },
-        {
-          "key": "x-frame-options",
-          "value": "SAMEORIGIN",
-          "description": ""
-        },
-        {
-          "key": "x-xss-protection",
-          "value": "1; mode=block",
+          "value": "Sat, 22 Oct 2022 17:05:06 GMT",
           "description": ""
         }
       ],
@@ -90,36 +65,27 @@
           "key": "message",
           "required": false,
           "validateType": 0,
-          "value": "OK"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "data",
-          "required": false,
-          "validateType": 0,
-          "value": "743161387848564736"
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "executeTime",
-          "required": false,
-          "validateType": 0,
-          "value": "4779"
+          "value": "11111111"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"743161387848564736\",\n  \"executeTime\": 4779\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"11111111\"\n}",
+      "key": "",
+      "required": false,
+      "validateType": 0,
+      "value": ""
+    },
+    "requestBodyDefinition": {
+      "requestType": "json",
+      "children": [],
+      "dataType": "",
+      "description": "",
+      "error": "",
+      "expression": "",
+      "json": "",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -127,14 +93,13 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-22 16:49:06",
+  "updatedAt": "2022-10-23 01:05:31",
   "createdAt": "2022-10-22 16:43:16",
   "createdBy": "",
   "updatedBy": "",
   "id": "4aa766d07717482583b1ea17afc28d6d"
 }
 ================================*/
-
 return db.table("test").primary("id").save({
   name: "11111"
 });

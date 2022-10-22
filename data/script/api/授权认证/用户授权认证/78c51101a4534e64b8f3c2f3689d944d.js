@@ -20,44 +20,44 @@
         {
           "children": [],
           "dataType": "String",
-          "description": "账号",
+          "description": "",
           "error": "",
           "expression": "",
           "key": "username",
-          "required": true,
+          "required": false,
           "validateType": 0,
           "value": "admin"
         },
         {
           "children": [],
           "dataType": "String",
-          "description": "密码",
+          "description": "",
           "error": "",
           "expression": "",
           "key": "password",
-          "required": true,
+          "required": false,
           "validateType": 0,
           "value": "123456"
         },
         {
           "children": [],
           "dataType": "String",
-          "description": "验证码Key",
+          "description": "",
           "error": "",
           "expression": "",
           "key": "captchaKey",
-          "required": true,
+          "required": false,
           "validateType": 0,
           "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
         },
         {
           "children": [],
           "dataType": "String",
-          "description": "验证码Value",
+          "description": "",
           "error": "",
           "expression": "",
           "key": "captchaValue",
-          "required": true,
+          "required": false,
           "validateType": 0,
           "value": "1234"
         }
@@ -138,7 +138,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-22 23:49:11",
+  "updatedAt": "2022-10-23 00:45:08",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
