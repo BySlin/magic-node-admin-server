@@ -16,6 +16,11 @@ export default {
     secret: 'P1lVKktxIjXpihjZ', // fs.readFileSync('xxxxx.key')
     expiresIn: '2d', // https://github.com/vercel/ms
   },
+  security: {
+    csrf: {
+      enable: false,
+    },
+  },
   cache: {
     store: redisStore,
     options: {

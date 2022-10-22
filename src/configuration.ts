@@ -2,6 +2,10 @@ import { Configuration, App } from '@midwayjs/decorator';
 import * as koa from '@midwayjs/koa';
 import * as validate from '@midwayjs/validate';
 import * as info from '@midwayjs/info';
+import * as security from '@midwayjs/security';
+import * as bullBoard from '@midwayjs/bull-board';
+import * as jwt from '@midwayjs/jwt';
+
 import * as mn from 'magic-node';
 
 import { join } from 'path';
@@ -10,6 +14,9 @@ import { join } from 'path';
   imports: [
     koa,
     validate,
+    security,
+    bullBoard,
+    jwt,
     mn,
     {
       component: info,

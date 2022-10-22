@@ -1,0 +1,19 @@
+{
+  "groupId": "0",
+  "type": "api",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "测试jwt",
+  "path": "/jwt",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-22 14:58:57",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "890e1e52195040d0b3f8d05898d5c05e"
+}
