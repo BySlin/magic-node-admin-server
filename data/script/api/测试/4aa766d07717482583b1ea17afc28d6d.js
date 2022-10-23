@@ -19,7 +19,7 @@
       "headers": [
         {
           "key": "content-length",
-          "value": "50",
+          "value": "139",
           "description": ""
         },
         {
@@ -29,7 +29,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 17:05:06 GMT",
+          "value": "Sun, 23 Oct 2022 07:11:43 GMT",
           "description": ""
         }
       ],
@@ -65,14 +65,36 @@
           "key": "message",
           "required": false,
           "validateType": 0,
-          "value": "11111111"
+          "value": "OK"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "data",
+          "required": false,
+          "validateType": 0,
+          "value": "{bcrypt}$2a$10$d79uZf3HFNOhjA4oQC9Cme1YF1Vle90L4DvKtKRkIMWjS2WrUxt2G"
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "executeTime",
+          "required": false,
+          "validateType": 0,
+          "value": "62"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"11111111\"\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"{bcrypt}$2a$10$d79uZf3HFNOhjA4oQC9Cme1YF1Vle90L4DvKtKRkIMWjS2WrUxt2G\",\n  \"executeTime\": 62\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -93,13 +115,22 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 01:05:31",
+  "updatedAt": "2022-10-23 15:11:43",
   "createdAt": "2022-10-22 16:43:16",
   "createdBy": "",
   "updatedBy": "",
   "id": "4aa766d07717482583b1ea17afc28d6d"
 }
 ================================*/
-return db.table("test").primary("id").save({
-  name: "11111"
+const crypto = require('crypto-js');
+
+const passwordEncoder = await importModule('passwordEncoder');
+const password = passwordEncoder.encrypt("E10ADC3949BA59ABBE56E057F20F883E");
+
+db.table('sys_user').primary("id").save({
+  username: "admin",
+  password
 });
+
+//E10ADC3949BA59ABBE56E057F20F883E
+return password;

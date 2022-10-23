@@ -48,12 +48,7 @@ export default {
   },
   cors: {
     credentials: true,
-    exposeHeaders: [
-      'Authorization',
-      'Content-Disposition',
-      'Date',
-      'captcha-key',
-    ],
+    exposeHeaders: ['Authorization', 'Content-Disposition', 'Date'],
     origin: (ctx: Context) => {
       return ctx.header.origin;
     },

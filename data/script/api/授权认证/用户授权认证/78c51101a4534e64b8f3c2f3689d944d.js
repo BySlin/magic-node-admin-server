@@ -37,7 +37,7 @@
           "key": "password",
           "required": false,
           "validateType": 0,
-          "value": "123456"
+          "value": "E10ADC3949BA59ABBE56E057F20F883E"
         },
         {
           "children": [],
@@ -48,7 +48,7 @@
           "key": "captchaKey",
           "required": false,
           "validateType": 0,
-          "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
+          "value": "db4158477fce4258b58ebe3349b74e5e"
         },
         {
           "children": [],
@@ -59,14 +59,14 @@
           "key": "captchaValue",
           "required": false,
           "validateType": 0,
-          "value": "1234"
+          "value": "mhjk"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"123456\",\r\n  \"captchaKey\": \"e3da13a1e8b74647b0a84ca4cc5aae1f\",\r\n  \"captchaValue\": \"1234\"\r\n}",
+      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"captchaKey\": \"db4158477fce4258b58ebe3349b74e5e\",\r\n  \"captchaValue\": \"mhjk\"\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -76,8 +76,28 @@
       "responseType": "json",
       "headers": [
         {
+          "key": "access-control-allow-credentials",
+          "value": "true",
+          "description": ""
+        },
+        {
+          "key": "access-control-allow-origin",
+          "value": "http://127.0.0.1:7001",
+          "description": ""
+        },
+        {
+          "key": "access-control-expose-headers",
+          "value": "Authorization, Content-Disposition, Date",
+          "description": ""
+        },
+        {
+          "key": "connection",
+          "value": "keep-alive",
+          "description": ""
+        },
+        {
           "key": "content-length",
-          "value": "178",
+          "value": "302",
           "description": ""
         },
         {
@@ -87,7 +107,27 @@
         },
         {
           "key": "date",
-          "value": "Sat, 22 Oct 2022 17:34:18 GMT",
+          "value": "Sun, 23 Oct 2022 06:13:13 GMT",
+          "description": ""
+        },
+        {
+          "key": "keep-alive",
+          "value": "timeout=5",
+          "description": ""
+        },
+        {
+          "key": "vary",
+          "value": "Origin",
+          "description": ""
+        },
+        {
+          "key": "x-frame-options",
+          "value": "SAMEORIGIN",
+          "description": ""
+        },
+        {
+          "key": "x-xss-protection",
+          "value": "1; mode=block",
           "description": ""
         }
       ],
@@ -133,10 +173,21 @@
               "description": "",
               "error": "",
               "expression": "",
-              "key": "username",
+              "key": "token",
               "required": false,
               "validateType": 0,
-              "value": "admin"
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MDQ2ODgsImV4cCI6MTY2NjY3NzQ4OH0.umZz3wbfXOGSTLCE0qxcNI9nbB2IRsgwOcbNmamhSIg"
+            },
+            {
+              "children": [],
+              "dataType": "Number",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "expiresIn",
+              "required": false,
+              "validateType": 0,
+              "value": "3600"
             },
             {
               "children": [],
@@ -144,32 +195,10 @@
               "description": "",
               "error": "",
               "expression": "",
-              "key": "password",
+              "key": "type",
               "required": false,
               "validateType": 0,
-              "value": "123456"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "captchaKey",
-              "required": false,
-              "validateType": 0,
-              "value": "e3da13a1e8b74647b0a84ca4cc5aae1f"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "captchaValue",
-              "required": false,
-              "validateType": 0,
-              "value": "1234"
+              "value": "bearer"
             }
           ],
           "dataType": "Object",
@@ -190,14 +219,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "4"
+          "value": "70"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"username\": \"admin\",\n    \"password\": \"123456\",\n    \"captchaKey\": \"e3da13a1e8b74647b0a84ca4cc5aae1f\",\n    \"captchaValue\": \"1234\"\n  },\n  \"executeTime\": 4\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"expiresIn\": 3600,\n    \"type\": \"bearer\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MDU1OTQsImV4cCI6MTY3MDEwNTU5NH0.KT2yRdOmakkT0R-ewvRvYUM1bFpgEl1_FBIIqKY5kE8\"\n  },\n  \"executeTime\": 70\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -205,7 +234,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 01:37:03",
+  "updatedAt": "2022-10-23 14:13:14",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -213,9 +242,37 @@
 }
 ================================*/
 const assert = require('assert');
-
-const captchaValue = await cache.get("captcha:" + body.captchaKey);
-
+//jwt模块
+const jwtService = await importModule('jwtService');
+//密码加密比较模块
+const passwordEncoder = await importModule('passwordEncoder');
+//缓存验证码Key
+const cacheCaptchaKey = "captcha:" + body.captchaKey;
+//从缓存取出验证码
+const captchaValue = await cache.get(cacheCaptchaKey);
+//比较验证码
 assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
 
-return body;
+const user = await db.table("sys_user").where().eq("username", body.username).selectOne();
+if (user != null) {
+  //比较密码是否一致
+  if (passwordEncoder.decrypt(body.password, user.password)) {
+    //删除缓存中的验证码
+    // await cache.del(cacheCaptchaKey);
+
+    const expiresIn = 3600;
+
+    return {
+      expiresIn,
+      type: "bearer",
+      token: await jwtService.sign({
+        id: user.id,
+        username: user.username
+      }, {
+        expiresIn: expiresIn * 1000
+      })
+    };
+  }
+}
+
+exit(400, "账号或密码错误");
