@@ -1,0 +1,19 @@
+{
+  "groupId": "0",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "登录认证",
+  "path": "/auth",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-23 14:19:17",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "9a0dde73dc7044d0a8af56bc900d4737"
+}

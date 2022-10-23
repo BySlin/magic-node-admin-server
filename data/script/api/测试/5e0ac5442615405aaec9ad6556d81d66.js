@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Sun, 23 Oct 2022 05:55:28 GMT",
+          "value": "Sun, 23 Oct 2022 09:23:37 GMT",
           "description": ""
         },
         {
@@ -101,7 +101,7 @@
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWNmYzIwOTdlOTQ4ZjViMDJiYTlkZGI5MWY4OWU0IiwiaWF0IjoxNjY2NTA0NTI4LCJleHAiOjE2NjY2NzczMjh9.iUrf877E7jvlHFNYZizRqTJmaBZaQP4SupCFWSpE0AY"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ5ZWI2N2ZhOGZlYjRkYjBhYTczYjI0MGMxYWE3ZGRhIiwiaWF0IjoxNjY2NTE3MDE3LCJleHAiOjE2NjY2MDM0MTd9.XkHLVDY240sloMELs08-UoUEs0bF5SLGSnU5JQmAq9U"
         },
         {
           "children": [],
@@ -112,14 +112,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "4"
+          "value": "3"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWNmYzIwOTdlOTQ4ZjViMDJiYTlkZGI5MWY4OWU0IiwiaWF0IjoxNjY2NTA0NTI4LCJleHAiOjE2NjY2NzczMjh9.iUrf877E7jvlHFNYZizRqTJmaBZaQP4SupCFWSpE0AY\",\n  \"executeTime\": 4\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ5ZWI2N2ZhOGZlYjRkYjBhYTczYjI0MGMxYWE3ZGRhIiwiaWF0IjoxNjY2NTE3MDE3LCJleHAiOjE2NjY2MDM0MTd9.XkHLVDY240sloMELs08-UoUEs0bF5SLGSnU5JQmAq9U\",\n  \"executeTime\": 3\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -127,7 +127,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 13:55:28",
+  "updatedAt": "2022-10-23 17:23:37",
   "createdAt": "2022-10-22 14:59:09",
   "createdBy": "",
   "updatedBy": "",
@@ -138,4 +138,5 @@ const jwtService = await importModule('jwtService');
 const token = await jwtService.sign({
   id: uuid()
 });
+
 return token;

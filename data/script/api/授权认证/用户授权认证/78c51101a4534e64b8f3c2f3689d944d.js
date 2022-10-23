@@ -11,7 +11,13 @@
   "enabled": true,
   "definition": {
     "parameters": [],
-    "options": [],
+    "options": [
+      {
+        "description": "该接口需要不登录也可访问",
+        "value": true,
+        "key": "anonymous"
+      }
+    ],
     "paths": [],
     "headers": [],
     "requestBodyDefinition": {
@@ -48,7 +54,7 @@
           "key": "captchaKey",
           "required": false,
           "validateType": 0,
-          "value": "db4158477fce4258b58ebe3349b74e5e"
+          "value": "524ea27e489543a7a25d35b784e7528c"
         },
         {
           "children": [],
@@ -59,14 +65,14 @@
           "key": "captchaValue",
           "required": false,
           "validateType": 0,
-          "value": "mhjk"
+          "value": "jgz0"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"captchaKey\": \"db4158477fce4258b58ebe3349b74e5e\",\r\n  \"captchaValue\": \"mhjk\"\r\n}",
+      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\"\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -97,7 +103,7 @@
         },
         {
           "key": "content-length",
-          "value": "302",
+          "value": "309",
           "description": ""
         },
         {
@@ -107,7 +113,7 @@
         },
         {
           "key": "date",
-          "value": "Sun, 23 Oct 2022 06:13:13 GMT",
+          "value": "Sun, 23 Oct 2022 09:15:33 GMT",
           "description": ""
         },
         {
@@ -169,17 +175,6 @@
           "children": [
             {
               "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "token",
-              "required": false,
-              "validateType": 0,
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MDQ2ODgsImV4cCI6MTY2NjY3NzQ4OH0.umZz3wbfXOGSTLCE0qxcNI9nbB2IRsgwOcbNmamhSIg"
-            },
-            {
-              "children": [],
               "dataType": "Number",
               "description": "",
               "error": "",
@@ -199,6 +194,17 @@
               "required": false,
               "validateType": 0,
               "value": "bearer"
+            },
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "accessToken",
+              "required": false,
+              "validateType": 0,
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MTY1MzMsImV4cCI6MTY2NjYwMjkzM30.TLdxjj-6nHgM7h5svX4W4B-sYm4IbTijcIWvD5Pdn6Q"
             }
           ],
           "dataType": "Object",
@@ -219,14 +225,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "70"
+          "value": "76"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"expiresIn\": 3600,\n    \"type\": \"bearer\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MDU1OTQsImV4cCI6MTY3MDEwNTU5NH0.KT2yRdOmakkT0R-ewvRvYUM1bFpgEl1_FBIIqKY5kE8\"\n  },\n  \"executeTime\": 70\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"expiresIn\": 86400,\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MTY1MzMsImV4cCI6MTY2NjYwMjkzM30.TLdxjj-6nHgM7h5svX4W4B-sYm4IbTijcIWvD5Pdn6Q\",\n    \"type\": \"Bearer\"\n  },\n  \"executeTime\": 76\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -234,7 +240,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 14:13:14",
+  "updatedAt": "2022-10-23 17:17:22",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -242,6 +248,8 @@
 }
 ================================*/
 const assert = require('assert');
+//env模块
+const env = await importModule('env');
 //jwt模块
 const jwtService = await importModule('jwtService');
 //密码加密比较模块
@@ -260,19 +268,21 @@ if (user != null) {
     //删除缓存中的验证码
     // await cache.del(cacheCaptchaKey);
 
-    const expiresIn = 3600;
+    const expiresIn = env.get('jwt.expiresIn');
+    const userContext = {
+      id: user.id,
+      username: user.username
+    };
+    const accessToken = await jwtService.sign(userContext);
+
+    cache.set("token:" + accessToken, userContext, expiresIn);
 
     return {
       expiresIn,
-      type: "bearer",
-      token: await jwtService.sign({
-        id: user.id,
-        username: user.username
-      }, {
-        expiresIn: expiresIn * 1000
-      })
+      accessToken,
+      type: "Bearer",
     };
   }
 }
 
-exit(400, "账号或密码错误");
+exit(400, "用户名或密码错误");

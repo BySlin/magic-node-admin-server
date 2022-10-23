@@ -1,0 +1,19 @@
+{
+  "id": "45ba95b66ddb4d3486834259df0e3118",
+  "groupId": "0",
+  "type": "interceptor",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "登录鉴权拦截器",
+  "path": "/auth",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "2022-10-23 13:54:26",
+  "createdAt": "",
+  "createdBy": "",
+  "updatedBy": ""
+}

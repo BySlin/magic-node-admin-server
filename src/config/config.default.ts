@@ -14,7 +14,7 @@ export default {
   },
   jwt: {
     secret: 'P1lVKktxIjXpihjZ', // fs.readFileSync('xxxxx.key')
-    expiresIn: '2d', // https://github.com/vercel/ms
+    expiresIn: 60 * 60 * 24, // https://github.com/vercel/ms
   },
   security: {
     csrf: {
