@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 20:35:50",
+  "updatedAt": "2022-10-24 22:11:01",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
@@ -260,29 +260,23 @@
 const menuCacheDelete = await importFunction('/system/menu/cache/delete');
 
 if (body.path) {
-  var pathCount = db.selectInt("select count(1) from sys_menu where deleted = 0 and path = #{path} ?{id, and id != #{id}}", {
-    id: body.id,
-    path: body.path
-  });
+  const pathCount = await await db.table('sys_menu').logic().where().eq('path', body.path).ne(not_null(body.id), 'id', body.id).count();
   if (pathCount > 0) {
     exit(400, '菜单链接已存在');
   }
 }
 
 if (body.permissionCode) {
-  var permissionCount = db.selectInt("select count(1) from sys_menu where deleted = 0 and permissionCode = #{permissionCode} ?{id, and id != #{id}}", {
-    id: body.id,
-    permissionCode: body.permissionCode
-  })
+  const permissionCount = await await db.table('sys_menu').logic().where().eq('permissionCode', body.permissionCode).ne(not_null(body.id), 'id', body.id).count();
   if (permissionCount > 0) {
     exit(400, '权限标识已存在');
   }
 }
 
-db.deleteCache("permsiions");
+await db.deleteCache("permsiions");
 
 if (body.id) {
-  menuCacheDelete(body.id);
+  await menuCacheDelete(body.id);
 }
 
-return db.table("sys_menu").primary("id").withBlank().save(body);
+return await db.table("sys_menu").primary("id").withBlank().save(body);
