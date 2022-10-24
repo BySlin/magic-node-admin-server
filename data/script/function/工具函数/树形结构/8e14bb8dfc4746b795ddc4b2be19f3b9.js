@@ -9,7 +9,7 @@
   "groupId": "7201a7bda3714abebc9f6680287aa099",
   "fileLock": false,
   "enabled": true,
-  "returnType": "Object",
+  "returnType": "Array",
   "definition": {
     "parameters": [
       {
@@ -34,7 +34,7 @@
       }
     ]
   },
-  "updatedAt": "2022-10-24 20:17:46",
+  "updatedAt": "2022-10-24 21:03:31",
   "createdAt": "2022-10-24 19:55:53",
   "createdBy": "",
   "updatedBy": "",
@@ -44,14 +44,15 @@
 const arrToTree = await importFunction('/utils/tree/arrToTree');
 
 const newArr = [];
-arr.forEach(async item => {
+for (const item of arr) {
+  //比较父级id
   if (item.parentId === parentId) {
-    const children = (await arrToTree(arr, item.id)) || [];
-
+    const children = await arrToTree(arr, item.id);
     newArr.push({
       ...item,
       children
-    })
+    });
   }
-});
-return newArr;
+}
+
+return newArr.length === 0 ? undefined : newArr;
