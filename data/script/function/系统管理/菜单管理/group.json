@@ -1,0 +1,19 @@
+{
+  "groupId": "88c1cdbdbf0144af8cfc1e58646205f9",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "菜单管理",
+  "path": "/menu",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-24 18:58:33",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "8b9ca74b0cf14405aa9f2b88f5ebc6b5"
+}

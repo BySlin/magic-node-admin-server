@@ -1,0 +1,19 @@
+{
+  "groupId": "0",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "工具函数",
+  "path": "/utils",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-24 19:55:30",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "665c6ec0946f4f438f4152486c32bbcd"
+}

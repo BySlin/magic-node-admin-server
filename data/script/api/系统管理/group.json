@@ -1,0 +1,19 @@
+{
+  "groupId": "0",
+  "type": "api",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "系统管理",
+  "path": "/system",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-24 18:46:50",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "019ad1b135004467a9f12eca9d58bfbf"
+}

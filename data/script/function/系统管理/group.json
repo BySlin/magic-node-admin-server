@@ -1,0 +1,19 @@
+{
+  "groupId": "0",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "系统管理",
+  "path": "/system",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-24 18:58:23",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "88c1cdbdbf0144af8cfc1e58646205f9"
+}

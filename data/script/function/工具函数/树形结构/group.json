@@ -1,0 +1,19 @@
+{
+  "groupId": "665c6ec0946f4f438f4152486c32bbcd",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "树形结构",
+  "path": "/tree",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-24 19:55:45",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "7201a7bda3714abebc9f6680287aa099"
+}

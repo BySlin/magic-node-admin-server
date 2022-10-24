@@ -3,19 +3,19 @@
   "type": "api",
   "isFolder": false,
   "method": "POST",
-  "fileName": "登录用户验证",
-  "path": "/token",
+  "fileName": "保存",
+  "path": "/save",
   "description": "",
-  "groupId": "4dac464312424adca284b3b36bceaafd",
+  "groupId": "1ba5cb19cc9c45f18bd64ef7b04fe876",
   "fileLock": false,
   "enabled": true,
   "definition": {
     "parameters": [],
     "options": [
       {
-        "description": "该接口需要不登录也可访问",
-        "value": true,
-        "key": "anonymous"
+        "description": "允许拥有该权限的访问",
+        "value": "system:menu:save",
+        "key": "permission"
       }
     ],
     "paths": [],
@@ -29,10 +29,10 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "username",
+          "key": "id",
           "required": false,
           "validateType": 0,
-          "value": "admin"
+          "value": "744713751759945728"
         },
         {
           "children": [],
@@ -40,10 +40,10 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "password",
+          "key": "parentId",
           "required": false,
           "validateType": 0,
-          "value": "E10ADC3949BA59ABBE56E057F20F883E"
+          "value": "0"
         },
         {
           "children": [],
@@ -51,10 +51,10 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "captchaKey",
+          "key": "permissionCode",
           "required": false,
           "validateType": 0,
-          "value": "524ea27e489543a7a25d35b784e7528c"
+          "value": "system:menu"
         },
         {
           "children": [],
@@ -62,17 +62,61 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "captchaValue",
+          "key": "name",
           "required": false,
           "validateType": 0,
-          "value": "jgz0"
+          "value": "系统管理"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "path",
+          "required": false,
+          "validateType": 0,
+          "value": "/system/menu"
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "category",
+          "required": false,
+          "validateType": 0,
+          "value": "1"
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "sort",
+          "required": false,
+          "validateType": 0,
+          "value": "0"
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "isOpen",
+          "required": false,
+          "validateType": 0,
+          "value": "0"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\"\r\n}",
+      "json": "{\r\n  \"id\": \"744713751759945728\",\r\n  \"parentId\": \"0\",\r\n  \"permissionCode\": \"system:menu\",\r\n  \"name\": \"系统管理\",\r\n  \"path\": \"/system/menu\",\r\n  \"category\": 1,\r\n  \"sort\": 0,\r\n  \"isOpen\": 0\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -103,7 +147,7 @@
         },
         {
           "key": "content-length",
-          "value": "309",
+          "value": "70",
           "description": ""
         },
         {
@@ -113,7 +157,7 @@
         },
         {
           "key": "date",
-          "value": "Sun, 23 Oct 2022 09:15:33 GMT",
+          "value": "Mon, 24 Oct 2022 12:13:27 GMT",
           "description": ""
         },
         {
@@ -172,49 +216,15 @@
           "value": "OK"
         },
         {
-          "children": [
-            {
-              "children": [],
-              "dataType": "Number",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "expiresIn",
-              "required": false,
-              "validateType": 0,
-              "value": "3600"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "type",
-              "required": false,
-              "validateType": 0,
-              "value": "bearer"
-            },
-            {
-              "children": [],
-              "dataType": "String",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "accessToken",
-              "required": false,
-              "validateType": 0,
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MTY1MzMsImV4cCI6MTY2NjYwMjkzM30.TLdxjj-6nHgM7h5svX4W4B-sYm4IbTijcIWvD5Pdn6Q"
-            }
-          ],
-          "dataType": "Object",
+          "children": [],
+          "dataType": "Number",
           "description": "",
           "error": "",
           "expression": "",
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": ""
+          "value": "1"
         },
         {
           "children": [],
@@ -225,14 +235,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "76"
+          "value": "83"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"expiresIn\": 86400,\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjY1MTY1MzMsImV4cCI6MTY2NjYwMjkzM30.TLdxjj-6nHgM7h5svX4W4B-sYm4IbTijcIWvD5Pdn6Q\",\n    \"type\": \"Bearer\"\n  },\n  \"executeTime\": 76\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": 1,\n  \"executeTime\": 83\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -240,49 +250,39 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 17:22:19",
-  "createdAt": "2022-10-22 15:22:17",
+  "updatedAt": "2022-10-24 20:13:27",
+  "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
-  "id": "78c51101a4534e64b8f3c2f3689d944d"
+  "id": "6b244c46212045c989965723163b6370"
 }
 ================================*/
-const assert = require('assert');
-//env模块
-const env = await importModule('env');
-//jwt模块
-const jwtService = await importModule('jwtService');
-//密码加密比较模块
-const passwordEncoder = await importModule('passwordEncoder');
-//缓存验证码Key
-const cacheCaptchaKey = "captcha:" + body.captchaKey;
-//从缓存取出验证码
-const captchaValue = await cache.get(cacheCaptchaKey);
-//比较验证码
-assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
+const menuCacheDelete = await importFunction('/system/menu/cache/delete');
 
-const user = await db.table("sys_user").where().eq("username", body.username).selectOne();
-if (user != null) {
-  //比较密码是否一致
-  if (passwordEncoder.decrypt(body.password, user.password)) {
-    //删除缓存中的验证码
-    await cache.del(cacheCaptchaKey);
-
-    const expiresIn = env.get('jwt.expiresIn');
-    const userContext = {
-      id: user.id,
-      username: user.username
-    };
-    const accessToken = await jwtService.sign(userContext);
-
-    cache.set("token:" + accessToken, userContext, expiresIn);
-
-    return {
-      expiresIn,
-      accessToken,
-      type: "Bearer",
-    };
+if (body.path) {
+  var pathCount = db.selectInt("select count(1) from sys_menu where deleted = 0 and path = #{path} ?{id, and id != #{id}}", {
+    id: body.id,
+    path: body.path
+  });
+  if (pathCount > 0) {
+    exit(400, '菜单链接已存在');
   }
 }
 
-exit(400, "用户名或密码错误");
+if (body.permissionCode) {
+  var permissionCount = db.selectInt("select count(1) from sys_menu where deleted = 0 and permissionCode = #{permissionCode} ?{id, and id != #{id}}", {
+    id: body.id,
+    permissionCode: body.permissionCode
+  })
+  if (permissionCount > 0) {
+    exit(400, '权限标识已存在');
+  }
+}
+
+db.deleteCache("permsiions");
+
+if (body.id) {
+  menuCacheDelete(body.id);
+}
+
+return db.table("sys_menu").primary("id").withBlank().save(body);
