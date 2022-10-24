@@ -3,7 +3,7 @@
   "type": "api",
   "isFolder": false,
   "method": "POST",
-  "fileName": "保存",
+  "fileName": "保存菜单",
   "path": "/save",
   "description": "",
   "groupId": "1ba5cb19cc9c45f18bd64ef7b04fe876",
@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 20:31:59",
+  "updatedAt": "2022-10-24 20:35:50",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
