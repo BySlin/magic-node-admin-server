@@ -62,12 +62,12 @@ export default {
         _name: '默认数据源', //固定值不可修改
         _key: 'default', //固定值不可修改
         _dialect: 'mysql', //数据库方言
+        _printSql: true, //打印SQL
         type: 'mysql', //数据库类型
         database: 'magic_node', //数据库
         username: 'root', //数据库账号
         password: '12345678', //数据库密码
         port: 3306, //数据库端口
-        logging: true,
       },
     },
   },
