@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Mon, 24 Oct 2022 12:18:23 GMT",
+          "value": "Mon, 24 Oct 2022 12:31:53 GMT",
           "description": ""
         },
         {
@@ -279,14 +279,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "12"
+          "value": "19"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"744690820434624512\",\n      \"parentId\": \"0\",\n      \"permissionCode\": \"system\",\n      \"name\": \"系统管理\",\n      \"path\": \"/system\",\n      \"category\": 1,\n      \"sort\": 0,\n      \"isOpen\": 0,\n      \"deleted\": 0,\n      \"createdBy\": null,\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-24T11:27:43.000Z\",\n      \"updatedAt\": \"2022-10-24T11:36:11.000Z\",\n      \"children\": [\n        {\n          \"id\": \"744713751759945728\",\n          \"parentId\": \"744690820434624512\",\n          \"permissionCode\": \"system:menu\",\n          \"name\": \"系统管理\",\n          \"path\": \"/system/menu\",\n          \"category\": 1,\n          \"sort\": 0,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": null,\n          \"updatedBy\": null,\n          \"createdAt\": \"2022-10-24T12:13:17.000Z\",\n          \"updatedAt\": \"2022-10-24T12:13:27.000Z\",\n          \"children\": []\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 12\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"744690820434624512\",\n      \"parentId\": \"0\",\n      \"permissionCode\": \"system\",\n      \"name\": \"系统管理\",\n      \"path\": \"/system\",\n      \"category\": 1,\n      \"sort\": 0,\n      \"isOpen\": 0,\n      \"deleted\": 0,\n      \"createdBy\": null,\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-24T11:27:43.000Z\",\n      \"updatedAt\": \"2022-10-24T11:36:11.000Z\",\n      \"children\": [\n        {\n          \"id\": \"744713751759945728\",\n          \"parentId\": \"744690820434624512\",\n          \"permissionCode\": \"system:menu\",\n          \"name\": \"系统管理\",\n          \"path\": \"/system/menu\",\n          \"category\": 1,\n          \"sort\": 0,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": null,\n          \"updatedBy\": null,\n          \"createdAt\": \"2022-10-24T12:13:17.000Z\",\n          \"updatedAt\": \"2022-10-24T12:13:27.000Z\",\n          \"children\": []\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 19\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -294,7 +294,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 20:18:23",
+  "updatedAt": "2022-10-24 20:31:53",
   "createdAt": "2022-10-24 19:48:18",
   "createdBy": "",
   "updatedBy": "",
