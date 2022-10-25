@@ -11,7 +11,13 @@
   "enabled": true,
   "definition": {
     "parameters": [],
-    "options": [],
+    "options": [
+      {
+        "description": "允许拥有该权限的访问",
+        "value": "system:menu:read",
+        "key": "permission"
+      }
+    ],
     "paths": [],
     "headers": [],
     "responseBodyDefinition": {
@@ -294,7 +300,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 20:34:12",
+  "updatedAt": "2022-10-25 21:12:53",
   "createdAt": "2022-10-24 19:48:18",
   "createdBy": "",
   "updatedBy": "",

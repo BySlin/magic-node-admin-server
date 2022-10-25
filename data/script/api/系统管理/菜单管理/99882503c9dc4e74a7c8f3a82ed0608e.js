@@ -22,7 +22,13 @@
         "value": "123456"
       }
     ],
-    "options": [],
+    "options": [
+      {
+        "description": "允许拥有该权限的访问",
+        "value": "system:menu:write",
+        "key": "permission"
+      }
+    ],
     "paths": [],
     "headers": [],
     "responseBodyDefinition": {
@@ -138,7 +144,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 22:40:56",
+  "updatedAt": "2022-10-25 21:13:05",
   "createdAt": "2022-10-24 22:23:19",
   "createdBy": "",
   "updatedBy": "",

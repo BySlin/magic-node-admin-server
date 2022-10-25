@@ -14,7 +14,7 @@
     "options": [
       {
         "description": "允许拥有该权限的访问",
-        "value": "system:menu:save",
+        "value": "system:menu:write",
         "key": "permission"
       }
     ],
@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-25 16:42:01",
+  "updatedAt": "2022-10-25 21:13:00",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
