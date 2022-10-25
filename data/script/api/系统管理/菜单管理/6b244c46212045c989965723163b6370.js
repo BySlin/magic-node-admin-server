@@ -250,14 +250,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 22:11:01",
+  "updatedAt": "2022-10-25 16:42:01",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
   "id": "6b244c46212045c989965723163b6370"
 }
 ================================*/
-const menuCacheDelete = await importFunction('/system/menu/cache/delete');
+const cacheDelete = await importFunction('/system/menu/cache/delete');
 
 if (body.path) {
   const pathCount = await await db.table('sys_menu').logic().where().eq('path', body.path).ne(not_null(body.id), 'id', body.id).count();
@@ -276,7 +276,7 @@ if (body.permissionCode) {
 await db.deleteCache("permsiions");
 
 if (body.id) {
-  await menuCacheDelete(body.id);
+  await cacheDelete(body.id);
 }
 
 return await db.table("sys_menu").primary("id").withBlank().save(body);

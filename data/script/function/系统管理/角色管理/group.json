@@ -1,0 +1,19 @@
+{
+  "groupId": "88c1cdbdbf0144af8cfc1e58646205f9",
+  "type": "function",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "角色管理",
+  "path": "/role",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-10-25 16:40:43",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "f0950b3419944b03a322cbe2ad06ce7e"
+}
