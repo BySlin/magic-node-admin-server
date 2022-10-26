@@ -9,7 +9,7 @@ import * as mn from 'magic-node';
 
 import { join } from 'path';
 import { SQLModule } from 'magic-node';
-import { MagicNamedTableInterceptor } from './magic/MagicNamedTableInterceptor';
+import { MagicNamedTableInterceptor } from './interceptor/MagicNamedTableInterceptor';
 import { ILifeCycle } from '@midwayjs/core';
 
 @Configuration({

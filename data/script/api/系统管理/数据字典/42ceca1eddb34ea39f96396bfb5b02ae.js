@@ -37,7 +37,7 @@
           "key": "parentId",
           "required": false,
           "validateType": 0,
-          "value": "746263254132588544"
+          "value": "0"
         },
         {
           "children": [],
@@ -48,7 +48,7 @@
           "key": "code",
           "required": false,
           "validateType": 0,
-          "value": "sex"
+          "value": "buttonType"
         },
         {
           "children": [],
@@ -59,7 +59,7 @@
           "key": "dictKey",
           "required": false,
           "validateType": 0,
-          "value": "2"
+          "value": "-1"
         },
         {
           "children": [],
@@ -70,7 +70,7 @@
           "key": "dictValue",
           "required": false,
           "validateType": 0,
-          "value": "女"
+          "value": "按钮类型"
         },
         {
           "children": [],
@@ -110,7 +110,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"parentId\":\"746263254132588544\",\r\n  \"code\": \"sex\",\r\n  \"dictKey\": \"2\",\r\n  \"dictValue\": \"女\",\r\n  \"sort\": 0,\r\n  \"sealed\": 0,\r\n  \"deleted\": 0\r\n}",
+      "json": "{\r\n  \"id\": \"\",\r\n  \"parentId\":\"0\",\r\n  \"code\": \"buttonType\",\r\n  \"dictKey\": \"-1\",\r\n  \"dictValue\": \"按钮类型\",\r\n  \"sort\": 0,\r\n  \"sealed\": 0,\r\n  \"deleted\": 0\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -141,7 +141,7 @@
         },
         {
           "key": "content-length",
-          "value": "89",
+          "value": "61",
           "description": ""
         },
         {
@@ -151,7 +151,7 @@
         },
         {
           "key": "date",
-          "value": "Wed, 26 Oct 2022 15:32:36 GMT",
+          "value": "Wed, 26 Oct 2022 16:32:55 GMT",
           "description": ""
         },
         {
@@ -211,17 +211,6 @@
         },
         {
           "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "data",
-          "required": false,
-          "validateType": 0,
-          "value": "746263621796888576"
-        },
-        {
-          "children": [],
           "dataType": "Number",
           "description": "",
           "error": "",
@@ -236,7 +225,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"746263621796888576\",\n  \"executeTime\": 10\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"executeTime\": 10\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -244,7 +233,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-26 23:32:36",
+  "updatedAt": "2022-10-27 01:08:44",
   "createdAt": "2022-10-25 22:09:14",
   "createdBy": "",
   "updatedBy": "",
@@ -272,4 +261,4 @@ if (not_empty(body.id) && body.parentId === '0') {
     });
 }
 
-return await db.table("sys_dict").primary("id").withBlank().save(body);
+return await db.table("sys_dict").primary("id").withBlank().saveOrUpdate(body);

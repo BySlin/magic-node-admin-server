@@ -5,3 +5,8 @@ declare module '@midwayjs/core' {
     user: any;
   }
 }
+declare module 'magic-node' {
+  interface NamedTable {
+    saveOrUpdate: () => void;
+  }
+}
