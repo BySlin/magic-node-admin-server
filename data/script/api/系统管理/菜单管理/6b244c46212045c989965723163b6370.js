@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-25 21:13:00",
+  "updatedAt": "2022-10-26 23:20:43",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
@@ -260,14 +260,14 @@
 const cacheDelete = await importFunction('/system/menu/cache/delete');
 
 if (body.path) {
-  const pathCount = await await db.table('sys_menu').logic().where().eq('path', body.path).ne(not_null(body.id), 'id', body.id).count();
+  const pathCount = await db.table('sys_menu').logic().where().eq('path', body.path).ne(not_null(body.id), 'id', body.id).count();
   if (pathCount > 0) {
     exit(400, '菜单链接已存在');
   }
 }
 
 if (body.permissionCode) {
-  const permissionCount = await await db.table('sys_menu').logic().where().eq('permissionCode', body.permissionCode).ne(not_null(body.id), 'id', body.id).count();
+  const permissionCount = await db.table('sys_menu').logic().where().eq('permissionCode', body.permissionCode).ne(not_null(body.id), 'id', body.id).count();
   if (permissionCount > 0) {
     exit(400, '权限标识已存在');
   }

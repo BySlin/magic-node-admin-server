@@ -41,7 +41,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-25 16:59:36",
+  "updatedAt": "2022-10-26 23:27:16",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
@@ -51,10 +51,10 @@
 const cacheDelete = await importFunction('/system/role/cache/delete');
 
 if (body.code) {
-  const codeCount = await await db.table('sys_role').logic().where().eq('code', body.code).ne(not_null(body.id), 'id', body.id).count();
+  const codeCount = await db.table('sys_role').logic().where().eq('code', body.code).ne(not_null(body.id), 'id', body.id).count();
   if (codeCount > 0) {
     exit(400, '角色编码已存在');
   }
 }
 
-return "hello magic-node";
+return await db.table("sys_dict").primary("id").withBlank().save(body);
