@@ -41,7 +41,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-26 23:27:16",
+  "updatedAt": "2022-10-27 15:09:47",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
@@ -57,4 +57,4 @@ if (body.code) {
   }
 }
 
-return await db.table("sys_dict").primary("id").withBlank().save(body);
+return await db.table("sys_dict").primary("id").withBlank().saveOrUpdate(body);

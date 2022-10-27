@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-26 23:20:43",
+  "updatedAt": "2022-10-27 15:09:53",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
@@ -279,4 +279,4 @@ if (body.id) {
   await cacheDelete(body.id);
 }
 
-return await db.table("sys_menu").primary("id").withBlank().save(body);
+return await db.table("sys_menu").primary("id").withBlank().saveOrUpdate(body);
