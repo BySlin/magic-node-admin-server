@@ -7,13 +7,13 @@
   "enabled": true,
   "script": "",
   "fileLock": false,
-  "fileName": "部门管理",
-  "path": "/department",
+  "fileName": "租户管理",
+  "path": "/tenant",
   "description": "",
   "returnType": "",
   "updatedAt": "",
-  "createdAt": "2022-10-24 22:53:50",
+  "createdAt": "2022-10-27 19:22:36",
   "createdBy": "",
   "updatedBy": "",
-  "id": "e65076e23083465b8aec7b3b8803fd7f"
+  "id": "65c03aa6484843d9b029878255a136b8"
 }
