@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 28 Oct 2022 18:08:08 GMT",
+          "value": "Fri, 28 Oct 2022 18:29:46 GMT",
           "description": ""
         },
         {
@@ -369,14 +369,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "5"
+          "value": "3"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"MagicNodeTeam\",\n      \"fullName\": \"MagicNodeTeam\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team1\",\n          \"fullName\": \"Team1\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team2\",\n          \"fullName\": \"Team2\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 5\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"MagicNodeTeam\",\n      \"fullName\": \"MagicNodeTeam\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team1\",\n          \"fullName\": \"Team1\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team2\",\n          \"fullName\": \"Team2\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 3\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -384,7 +384,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 02:08:08",
+  "updatedAt": "2022-10-29 02:29:46",
   "createdAt": "2022-10-28 23:35:43",
   "createdBy": "",
   "updatedBy": "",

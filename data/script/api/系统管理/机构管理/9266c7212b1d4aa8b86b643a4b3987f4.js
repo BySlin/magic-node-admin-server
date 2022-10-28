@@ -6,7 +6,7 @@
   "fileName": "删除",
   "path": "/delete",
   "description": "",
-  "groupId": "1ba5cb19cc9c45f18bd64ef7b04fe876",
+  "groupId": "e65076e23083465b8aec7b3b8803fd7f",
   "fileLock": false,
   "enabled": true,
   "definition": {
@@ -19,16 +19,10 @@
         "required": true,
         "error": "",
         "validateType": 0,
-        "value": "123456"
+        "value": "1123598813738675201"
       }
     ],
-    "options": [
-      {
-        "description": "允许拥有该权限的访问",
-        "value": "system:menu:write",
-        "key": "permission"
-      }
-    ],
+    "options": [],
     "paths": [],
     "headers": [],
     "responseBodyDefinition": {
@@ -66,7 +60,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 28 Oct 2022 18:27:37 GMT",
+          "value": "Fri, 28 Oct 2022 18:29:42 GMT",
           "description": ""
         },
         {
@@ -159,29 +153,22 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 02:29:18",
-  "createdAt": "2022-10-24 22:23:19",
+  "updatedAt": "2022-10-29 02:29:52",
+  "createdAt": "2022-10-29 02:25:20",
   "createdBy": "",
   "updatedBy": "",
-  "id": "99882503c9dc4e74a7c8f3a82ed0608e"
+  "id": "9266c7212b1d4aa8b86b643a4b3987f4"
 }
 ================================*/
 const ids = query.ids.split(',');
 
-const menuCount = await db.table('sys_menu')
+const deptCount = await db.table('sys_dept')
   .logic()
   .where()
   .in('parentId', ids)
   .count();
-if (menuCount > 0) {
+if (deptCount > 0) {
   exit(400, '请先删除子节点!');
 }
 
-const menuCacheDelete = await importFunction('/system/menu/cache/delete');
-
-ids.forEach(async id => {
-  await menuCacheDelete(query.id);
-});
-
-// db.table('sys_role_menu').where().eq("menu_id", id).delete();
-return await db.table("sys_menu").logic().where().in("id", ids).delete();
+return await db.table("sys_dept").logic().where().in("id", ids).delete();

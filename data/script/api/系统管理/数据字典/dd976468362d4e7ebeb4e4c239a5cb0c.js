@@ -153,7 +153,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-26 23:43:15",
+  "updatedAt": "2022-10-29 02:29:03",
   "createdAt": "2022-10-26 23:39:17",
   "createdBy": "",
   "updatedBy": "",
@@ -161,6 +161,7 @@
 }
 ================================*/
 const ids = query.ids.split(',');
+
 const dictCount = await db.table('sys_dict')
   .logic()
   .where()
