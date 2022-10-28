@@ -184,7 +184,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-26 23:38:49",
+  "updatedAt": "2022-10-29 02:43:06",
   "createdAt": "2022-10-26 23:35:31",
   "createdBy": "",
   "updatedBy": "",
@@ -197,5 +197,6 @@ return db.table('sys_dict')
   .where()
   .ne('parentId', '0')
   .eq("sealed", 0)
+  .eq('code', query.code)
   .orderBy('sort')
   .select();
