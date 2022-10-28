@@ -23,7 +23,12 @@ export class MagicNamedTableInterceptor implements NamedTableInterceptor {
     }
 
     if (namedTable.getAttribute(TENANT_MODE)) {
-      if (SqlMode.SELECT === sqlMode) {
+      if (
+        SqlMode.SELECT === sqlMode ||
+        SqlMode.SELECT_ONE === sqlMode ||
+        SqlMode.COUNT === sqlMode ||
+        SqlMode.PAGE === sqlMode
+      ) {
         if (ctx.user?.tenantId !== ADMIN_TENANT_ID)
           namedTable.where().eq('tenantId', ctx.user.tenantId);
       }
