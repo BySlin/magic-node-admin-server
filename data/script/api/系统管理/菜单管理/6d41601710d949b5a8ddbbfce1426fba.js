@@ -30,7 +30,7 @@
         },
         {
           "key": "content-length",
-          "value": "1353",
+          "value": "1313",
           "description": ""
         },
         {
@@ -40,7 +40,7 @@
         },
         {
           "key": "date",
-          "value": "Thu, 27 Oct 2022 09:13:44 GMT",
+          "value": "Fri, 28 Oct 2022 17:54:13 GMT",
           "description": ""
         },
         {
@@ -123,17 +123,6 @@
                   "required": false,
                   "validateType": 0,
                   "value": "0"
-                },
-                {
-                  "children": [],
-                  "dataType": "String",
-                  "description": "",
-                  "error": "",
-                  "expression": "",
-                  "key": "permissionCode",
-                  "required": false,
-                  "validateType": 0,
-                  "value": "system"
                 },
                 {
                   "children": [],
@@ -255,6 +244,17 @@
                   "required": false,
                   "validateType": 0,
                   "value": ""
+                },
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "code",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "system"
                 }
               ],
               "dataType": "Object",
@@ -285,14 +285,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "92"
+          "value": "10"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"744690820434624512\",\n      \"parentId\": \"0\",\n      \"permissionCode\": \"system\",\n      \"name\": \"系统管理\",\n      \"path\": \"/system\",\n      \"category\": 1,\n      \"sort\": 0,\n      \"isOpen\": 0,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": \"743789983910854656\",\n      \"createdAt\": \"2022-10-24T11:27:43.000Z\",\n      \"updatedAt\": \"2022-10-24T14:17:08.000Z\",\n      \"children\": [\n        {\n          \"id\": \"744713751759945728\",\n          \"parentId\": \"744690820434624512\",\n          \"permissionCode\": \"system:menu\",\n          \"name\": \"菜单管理\",\n          \"path\": \"/system/menu\",\n          \"category\": 1,\n          \"sort\": 0,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": \"743789983910854656\",\n          \"updatedBy\": \"743789983910854656\",\n          \"createdAt\": \"2022-10-24T12:13:17.000Z\",\n          \"updatedAt\": \"2022-10-24T14:06:53.000Z\",\n          \"children\": [\n            {\n              \"id\": \"744758062442610688\",\n              \"parentId\": \"744713751759945728\",\n              \"permissionCode\": \"system:menu:add\",\n              \"name\": \"新增\",\n              \"path\": null,\n              \"category\": 2,\n              \"sort\": 1,\n              \"isOpen\": 0,\n              \"deleted\": 0,\n              \"createdBy\": \"743789983910854656\",\n              \"updatedBy\": \"743789983910854656\",\n              \"createdAt\": \"2022-10-24T13:41:19.000Z\",\n              \"updatedAt\": \"2022-10-24T14:10:28.000Z\"\n            }\n          ]\n        },\n        {\n          \"id\": \"744756041593389056\",\n          \"parentId\": \"744690820434624512\",\n          \"permissionCode\": \"system:role\",\n          \"name\": \"角色管理\",\n          \"path\": \"/system/role\",\n          \"category\": 1,\n          \"sort\": 1,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": \"743789983910854656\",\n          \"updatedBy\": \"743789983910854656\",\n          \"createdAt\": \"2022-10-24T13:37:18.000Z\",\n          \"updatedAt\": \"2022-10-24T14:06:51.000Z\"\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 92\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"744690820434624512\",\n      \"parentId\": \"0\",\n      \"code\": \"system\",\n      \"name\": \"系统管理\",\n      \"path\": \"/system\",\n      \"category\": 1,\n      \"sort\": 0,\n      \"isOpen\": 0,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": \"743789983910854656\",\n      \"createdAt\": \"2022-10-24T11:27:43.000Z\",\n      \"updatedAt\": \"2022-10-24T14:17:08.000Z\",\n      \"children\": [\n        {\n          \"id\": \"744713751759945728\",\n          \"parentId\": \"744690820434624512\",\n          \"code\": \"system:menu\",\n          \"name\": \"菜单管理\",\n          \"path\": \"/system/menu\",\n          \"category\": 1,\n          \"sort\": 0,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": \"743789983910854656\",\n          \"updatedBy\": \"743789983910854656\",\n          \"createdAt\": \"2022-10-24T12:13:17.000Z\",\n          \"updatedAt\": \"2022-10-24T14:06:53.000Z\",\n          \"children\": [\n            {\n              \"id\": \"744758062442610688\",\n              \"parentId\": \"744713751759945728\",\n              \"code\": \"system:menu:add\",\n              \"name\": \"新增\",\n              \"path\": null,\n              \"category\": 2,\n              \"sort\": 1,\n              \"isOpen\": 0,\n              \"deleted\": 0,\n              \"createdBy\": \"743789983910854656\",\n              \"updatedBy\": \"743789983910854656\",\n              \"createdAt\": \"2022-10-24T13:41:19.000Z\",\n              \"updatedAt\": \"2022-10-24T14:10:28.000Z\"\n            }\n          ]\n        },\n        {\n          \"id\": \"744756041593389056\",\n          \"parentId\": \"744690820434624512\",\n          \"code\": \"system:role\",\n          \"name\": \"角色管理\",\n          \"path\": \"/system/role\",\n          \"category\": 1,\n          \"sort\": 1,\n          \"isOpen\": 0,\n          \"deleted\": 0,\n          \"createdBy\": \"743789983910854656\",\n          \"updatedBy\": \"743789983910854656\",\n          \"createdAt\": \"2022-10-24T13:37:18.000Z\",\n          \"updatedAt\": \"2022-10-24T14:06:51.000Z\"\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 10\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -300,12 +300,21 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-27 17:13:44",
+  "updatedAt": "2022-10-29 01:54:13",
   "createdAt": "2022-10-24 19:48:18",
   "createdBy": "",
   "updatedBy": "",
   "id": "6d41601710d949b5a8ddbbfce1426fba"
 }
 ================================*/
-const toTree = await importFunction('/utils/tree/arrToTree');
-return toTree(await db.table('sys_menu').logic().orderBy('sort').select(), '0');
+const toTree = async (parentId) => {
+  const list = await db.table('sys_menu').logic().where().eq('parentId', parentId).orderBy('sort').select();
+  for (const data of list) {
+    const children = await toTree(data.id);
+    if (children.length > 0) {
+      data.children = await toTree(data.id);
+    }
+  }
+  return list;
+}
+return await toTree("0");
