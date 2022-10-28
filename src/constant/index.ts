@@ -32,3 +32,8 @@ export const CREATED_AT = 'createdAt';
  * 修改时间
  */
 export const UPDATED_AT = 'updatedAt';
+
+/**
+ * 默认管理租户
+ */
+export const ADMIN_TENANT_ID = '000000';

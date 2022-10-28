@@ -252,21 +252,16 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 03:13:26",
+  "updatedAt": "2022-10-29 03:26:23",
   "createdAt": "2022-10-29 03:10:21",
   "createdBy": "",
   "updatedBy": "",
   "id": "2037e3c64e444b82bcb7a12940cd4783"
 }
 ================================*/
-const table = db.table('sys_tenant');
-
-if (ctx.user.tenantId !== '000000') {
-  table.tenant();
-}
-
-return await table
+return await db.table('sys_tenant')
   .logic()
+  .tenant()
   .where()
   .orderByDesc('createdAt')
   .select();
