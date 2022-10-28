@@ -24,7 +24,7 @@
         },
         {
           "key": "content-length",
-          "value": "764",
+          "value": "684",
           "description": ""
         },
         {
@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 28 Oct 2022 17:55:03 GMT",
+          "value": "Fri, 28 Oct 2022 18:08:08 GMT",
           "description": ""
         },
         {
@@ -369,14 +369,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "7"
+          "value": "5"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"刀锋科技\",\n      \"fullName\": \"江苏刀锋科技有限公司\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"常州刀锋\",\n          \"fullName\": \"常州刀锋科技有限公司\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"苏州刀锋\",\n          \"fullName\": \"苏州刀锋科技有限公司\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 7\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"MagicNodeTeam\",\n      \"fullName\": \"MagicNodeTeam\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team1\",\n          \"fullName\": \"Team1\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team2\",\n          \"fullName\": \"Team2\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 5\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -384,7 +384,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 01:55:03",
+  "updatedAt": "2022-10-29 02:08:08",
   "createdAt": "2022-10-28 23:35:43",
   "createdBy": "",
   "updatedBy": "",
@@ -396,7 +396,7 @@ const toTree = async (parentId) => {
   for (const data of list) {
     const children = await toTree(data.id);
     if (children.length > 0) {
-      data.children = await toTree(data.id);
+      data.children = children;
     }
   }
   return list;

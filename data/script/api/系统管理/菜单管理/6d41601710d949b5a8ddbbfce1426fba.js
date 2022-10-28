@@ -300,7 +300,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 01:54:13",
+  "updatedAt": "2022-10-29 02:00:26",
   "createdAt": "2022-10-24 19:48:18",
   "createdBy": "",
   "updatedBy": "",
@@ -312,7 +312,7 @@ const toTree = async (parentId) => {
   for (const data of list) {
     const children = await toTree(data.id);
     if (children.length > 0) {
-      data.children = await toTree(data.id);
+      data.children = children;
     }
   }
   return list;
