@@ -2,7 +2,7 @@ import { NamedTable, NamedTableInterceptor, SqlMode } from 'magic-node';
 import { idSequence } from '@theroyalwhee0/snowman';
 import * as dayjs from 'dayjs';
 import { Context } from '@midwayjs/core';
-import { COMMON_FIELD } from '../constant';
+import { COMMON_FIELD, TENANT_MODE } from '../constant';
 
 const accountIds = idSequence();
 const formatTemplate = 'YYYY-MM-DD HH:mm:ss';
@@ -19,6 +19,12 @@ export class MagicNamedTableInterceptor implements NamedTableInterceptor {
       } else if (SqlMode.UPDATE === sqlMode) {
         namedTable.column('updatedAt', dayjs().format(formatTemplate));
         namedTable.column('updatedBy', ctx.user?.id);
+      }
+    }
+
+    if (namedTable.getAttribute(TENANT_MODE)) {
+      if (SqlMode.SELECT === sqlMode) {
+        namedTable.where().eq('tenantId', ctx.user.tenantId);
       }
     }
   }

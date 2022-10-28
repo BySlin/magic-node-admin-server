@@ -7,6 +7,7 @@ declare module '@midwayjs/core' {
 }
 declare module 'magic-node' {
   interface NamedTable {
-    saveOrUpdate: () => void;
+    saveOrUpdate: () => Promise<void>;
+    tenant: () => this;
   }
 }

@@ -4,6 +4,11 @@
 export const COMMON_FIELD = 'setCommonField';
 
 /**
+ * 设置多租户模式
+ */
+export const TENANT_MODE = 'setTenantMode';
+
+/**
  * id
  */
 export const ID = 'id';

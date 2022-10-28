@@ -357,7 +357,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-27 17:11:01",
+  "updatedAt": "2022-10-27 20:19:52",
   "createdAt": "2022-10-27 15:21:16",
   "createdBy": "",
   "updatedBy": "",
@@ -371,8 +371,8 @@ if (query.parentId === '0') {
 return await db.table('sys_dict')
   .logic()
   .where()
-  .ne("id", query.parentId)
   .ne('parentId', '0')
+  .eq("parentId", query.parentId)
   .like(not_blank(query.code), 'code', `%${query.code}%`)
   .like(not_blank(query.dictValue), 'dictValue', `%${query.dictValue}%`)
   .orderBy('sort')

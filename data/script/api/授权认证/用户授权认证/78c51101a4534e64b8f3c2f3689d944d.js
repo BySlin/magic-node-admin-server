@@ -30,7 +30,7 @@
           "error": "",
           "expression": "",
           "key": "username",
-          "required": false,
+          "required": true,
           "validateType": 0,
           "value": "admin"
         },
@@ -41,7 +41,7 @@
           "error": "",
           "expression": "",
           "key": "password",
-          "required": false,
+          "required": true,
           "validateType": 0,
           "value": "E10ADC3949BA59ABBE56E057F20F883E"
         },
@@ -51,8 +51,20 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "captchaKey",
+          "key": "tenantId",
           "required": false,
+          "validateType": 0,
+          "value": "000000",
+          "defaultValue": "000000"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "captchaKey",
+          "required": true,
           "validateType": 0,
           "value": "524ea27e489543a7a25d35b784e7528c"
         },
@@ -63,7 +75,7 @@
           "error": "",
           "expression": "",
           "key": "captchaValue",
-          "required": false,
+          "required": true,
           "validateType": 0,
           "value": "jgz0"
         }
@@ -72,7 +84,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\"\r\n}",
+      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"tenantId\": \"000000\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\"\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -240,7 +252,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-24 17:22:19",
+  "updatedAt": "2022-10-28 23:27:05",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -261,7 +273,11 @@ const captchaValue = await cache.get(cacheCaptchaKey);
 //比较验证码
 assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
 
-const user = await db.table("sys_user").where().eq("username", body.username).selectOne();
+const user = await db.table("sys_user")
+  .where()
+  .eq("username", body.username)
+  .eq('tenantId', body.tenantId)
+  .selectOne();
 if (user != null) {
   //比较密码是否一致
   if (passwordEncoder.decrypt(body.password, user.password)) {
@@ -271,7 +287,8 @@ if (user != null) {
     const expiresIn = env.get('jwt.expiresIn');
     const userContext = {
       id: user.id,
-      username: user.username
+      username: user.username,
+      tenantId: user.tenantId,
     };
     const accessToken = await jwtService.sign(userContext);
 

@@ -5,4 +5,9 @@ declare interface NamedTable {
    * @return 新增返回id 更新返回更新行数
    */
   saveOrUpdate(data?: { [key: string]: any } | boolean): Promise<number | any>;
+
+  /**
+   * 多租户模式
+   */
+  tenant(): this;
 }

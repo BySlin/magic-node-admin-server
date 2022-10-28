@@ -41,7 +41,7 @@
           "error": "",
           "expression": "",
           "key": "parentId",
-          "required": false,
+          "required": true,
           "validateType": 0,
           "value": "0"
         },
@@ -51,8 +51,8 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "permissionCode",
-          "required": false,
+          "key": "code",
+          "required": true,
           "validateType": 0,
           "value": "system:menu"
         },
@@ -63,7 +63,7 @@
           "error": "",
           "expression": "",
           "key": "name",
-          "required": false,
+          "required": true,
           "validateType": 0,
           "value": "系统管理"
         },
@@ -116,7 +116,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"744713751759945728\",\r\n  \"parentId\": \"0\",\r\n  \"permissionCode\": \"system:menu\",\r\n  \"name\": \"系统管理\",\r\n  \"path\": \"/system/menu\",\r\n  \"category\": 1,\r\n  \"sort\": 0,\r\n  \"isOpen\": 0\r\n}",
+      "json": "{\r\n  \"id\": \"744713751759945728\",\r\n  \"parentId\": \"0\",\r\n  \"code\": \"system:menu\",\r\n  \"name\": \"系统管理\",\r\n  \"path\": \"/system/menu\",\r\n  \"category\": 1,\r\n  \"sort\": 0,\r\n  \"isOpen\": 0\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -250,7 +250,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-27 15:09:53",
+  "updatedAt": "2022-10-29 01:03:13",
   "createdAt": "2022-10-24 18:49:30",
   "createdBy": "",
   "updatedBy": "",
@@ -266,9 +266,9 @@ if (body.path) {
   }
 }
 
-if (body.permissionCode) {
-  const permissionCount = await db.table('sys_menu').logic().where().eq('permissionCode', body.permissionCode).ne(not_null(body.id), 'id', body.id).count();
-  if (permissionCount > 0) {
+if (body.code) {
+  const codeCount = await db.table('sys_menu').logic().where().eq('code', body.code).ne(not_null(body.id), 'id', body.id).count();
+  if (codeCount > 0) {
     exit(400, '权限标识已存在');
   }
 }
