@@ -19,12 +19,12 @@
     "cache-manager": "^5.1.1",
     "cache-manager-ioredis": "^2.1.0",
     "crypto-js": "^4.1.1",
-    "magic-node": "^1.0.0-beta88",
+    "magic-node": "^1.0.0-beta89",
     "svg-captcha": "^1.4.0",
     "typeorm": "^0.3.10"
   },
   "devDependencies": {
-    "@midwayjs/cli": "^1.3.15",
+    "@midwayjs/cli": "^1.3.16",
     "@midwayjs/mock": "^3.6.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/crypto-js": "^4.1.1",
@@ -33,7 +33,7 @@
     "@types/koa": "^2.13.5",
     "@types/node": "14",
     "cross-env": "^7.0.3",
-    "jest": "^29.2.1",
+    "jest": "^29.2.2",
     "mwts": "^1.3.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
