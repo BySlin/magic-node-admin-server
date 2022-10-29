@@ -47,7 +47,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 28 Oct 2022 19:13:26 GMT",
+          "value": "Sat, 29 Oct 2022 06:54:04 GMT",
           "description": ""
         },
         {
@@ -244,7 +244,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"746878914181201920\",\n      \"tenantId\": \"111111\",\n      \"tenantName\": \"111111\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": \"743789983910854656\",\n      \"createdAt\": \"2022-10-27T11:55:04.000Z\",\n      \"updatedAt\": \"2022-10-27T11:55:11.000Z\"\n    },\n    {\n      \"id\": \"746871487847202816\",\n      \"tenantId\": \"123456\",\n      \"tenantName\": \"测试\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-27T11:40:19.000Z\",\n      \"updatedAt\": null\n    },\n    {\n      \"id\": \"1123598820738675201\",\n      \"tenantId\": \"000000\",\n      \"tenantName\": \"管理组\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-26T11:40:54.000Z\",\n      \"updatedAt\": null\n    }\n  ],\n  \"executeTime\": 2\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598820738675201\",\n      \"tenantId\": \"000000\",\n      \"tenantName\": \"管理组\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-26T11:40:54.000Z\",\n      \"updatedAt\": null\n    },\n    {\n      \"id\": \"746871487847202816\",\n      \"tenantId\": \"123456\",\n      \"tenantName\": \"测试\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-27T11:40:19.000Z\",\n      \"updatedAt\": null\n    },\n    {\n      \"id\": \"746878914181201920\",\n      \"tenantId\": \"111111\",\n      \"tenantName\": \"111111\",\n      \"enabled\": 1,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": \"743789983910854656\",\n      \"createdAt\": \"2022-10-27T11:55:04.000Z\",\n      \"updatedAt\": \"2022-10-27T11:55:11.000Z\"\n    }\n  ],\n  \"executeTime\": 2\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -252,7 +252,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 03:26:23",
+  "updatedAt": "2022-10-29 14:54:04",
   "createdAt": "2022-10-29 03:10:21",
   "createdBy": "",
   "updatedBy": "",
@@ -262,6 +262,5 @@
 return await db.table('sys_tenant')
   .logic()
   .tenant()
-  .where()
-  .orderByDesc('createdAt')
+  .orderBy('createdAt')
   .select();

@@ -2,93 +2,37 @@
 {
   "type": "api",
   "isFolder": false,
-  "method": "POST",
-  "fileName": "保存角色",
-  "path": "/save",
+  "method": "DELETE",
+  "fileName": "删除",
+  "path": "/delete",
   "description": "",
   "groupId": "5cf5939cb80f43ff90e954657fc50b93",
   "fileLock": false,
   "enabled": true,
   "definition": {
-    "parameters": [],
+    "parameters": [
+      {
+        "description": "ids多个id用,隔开",
+        "expression": "",
+        "key": "ids",
+        "dataType": "String",
+        "required": true,
+        "error": "",
+        "validateType": 0,
+        "value": "1"
+      }
+    ],
     "options": [],
     "paths": [],
     "headers": [],
     "requestBodyDefinition": {
       "requestType": "json",
-      "children": [
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "id",
-          "required": false,
-          "validateType": 0,
-          "value": ""
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "tenantId",
-          "required": false,
-          "validateType": 0,
-          "value": "000000"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "roleName",
-          "required": true,
-          "validateType": 0,
-          "value": "test"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "roleAlias",
-          "required": true,
-          "validateType": 0,
-          "value": "test"
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "permission",
-          "required": true,
-          "validateType": 0,
-          "value": "0"
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "sort",
-          "required": false,
-          "validateType": 0,
-          "value": "1"
-        }
-      ],
-      "dataType": "Object",
+      "children": [],
+      "dataType": "",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"roleName\": \"test\",\r\n  \"roleAlias\": \"test\",\r\n  \"permission\": 0,\r\n  \"sort\": 1\r\n}",
+      "json": "",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -119,7 +63,7 @@
         },
         {
           "key": "content-length",
-          "value": "89",
+          "value": "69",
           "description": ""
         },
         {
@@ -129,7 +73,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 29 Oct 2022 07:53:13 GMT",
+          "value": "Sat, 29 Oct 2022 07:51:38 GMT",
           "description": ""
         },
         {
@@ -189,14 +133,14 @@
         },
         {
           "children": [],
-          "dataType": "String",
+          "dataType": "Number",
           "description": "",
           "error": "",
           "expression": "",
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "748206733620412416"
+          "value": "0"
         },
         {
           "children": [],
@@ -207,14 +151,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "13"
+          "value": "4"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"748206733620412416\",\n  \"executeTime\": 13\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": 0,\n  \"executeTime\": 4\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -222,22 +166,11 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 15:53:13",
-  "createdAt": "2022-10-25 16:39:47",
+  "updatedAt": "2022-10-29 15:51:38",
+  "createdAt": "2022-10-29 15:50:59",
   "createdBy": "",
   "updatedBy": "",
-  "id": "5995b90ac9da461e9cd15e81039083d9"
+  "id": "08536ecb40f6446fbc839470d7fc5c29"
 }
 ================================*/
-const cacheDelete = await importFunction('/system/role/cache/delete');
-
-body.tenantId = ctx.user.tenantId;
-
-if (body.code) {
-  const codeCount = await db.table('sys_role').logic().where().eq('roleAlias', body.roleAlias).ne(not_null(body.id), 'id', body.id).count();
-  if (codeCount > 0) {
-    exit(400, '角色别名已存在');
-  }
-}
-
-return await db.table("sys_role").primary("id").withBlank().saveOrUpdate(body);
+return 0;

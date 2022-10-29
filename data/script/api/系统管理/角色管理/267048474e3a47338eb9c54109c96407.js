@@ -6,7 +6,7 @@
   "fileName": "列表查询",
   "path": "/list",
   "description": "",
-  "groupId": "65c03aa6484843d9b029878255a136b8",
+  "groupId": "5cf5939cb80f43ff90e954657fc50b93",
   "fileLock": false,
   "enabled": true,
   "definition": {
@@ -29,7 +29,7 @@
         "required": true,
         "error": "",
         "validateType": 0,
-        "value": "10"
+        "value": "20"
       },
       {
         "description": "",
@@ -44,7 +44,17 @@
       {
         "description": "",
         "expression": "",
-        "key": "tenantName",
+        "key": "roleName",
+        "dataType": "String",
+        "required": false,
+        "error": "",
+        "validateType": 0,
+        "value": ""
+      },
+      {
+        "description": "",
+        "expression": "",
+        "key": "roleAlias",
         "dataType": "String",
         "required": false,
         "error": "",
@@ -55,19 +65,6 @@
     "options": [],
     "paths": [],
     "headers": [],
-    "requestBodyDefinition": {
-      "requestType": "json",
-      "children": [],
-      "dataType": "",
-      "description": "",
-      "error": "",
-      "expression": "",
-      "json": "",
-      "key": "",
-      "required": false,
-      "validateType": 0,
-      "value": ""
-    },
     "responseBodyDefinition": {
       "responseType": "json",
       "headers": [
@@ -78,7 +75,7 @@
         },
         {
           "key": "content-length",
-          "value": "254",
+          "value": "1068",
           "description": ""
         },
         {
@@ -88,7 +85,7 @@
         },
         {
           "key": "date",
-          "value": "Thu, 27 Oct 2022 11:40:12 GMT",
+          "value": "Sat, 29 Oct 2022 07:52:26 GMT",
           "description": ""
         },
         {
@@ -157,7 +154,7 @@
               "key": "total",
               "required": false,
               "validateType": 0,
-              "value": "1"
+              "value": "5"
             },
             {
               "children": [
@@ -172,7 +169,7 @@
                       "key": "id",
                       "required": false,
                       "validateType": 0,
-                      "value": "1123598820738675201"
+                      "value": "1123598816738675201"
                     },
                     {
                       "children": [],
@@ -191,10 +188,21 @@
                       "description": "",
                       "error": "",
                       "expression": "",
-                      "key": "tenantName",
+                      "key": "roleName",
                       "required": false,
                       "validateType": 0,
-                      "value": "管理组"
+                      "value": "超级管理员"
+                    },
+                    {
+                      "children": [],
+                      "dataType": "String",
+                      "description": "",
+                      "error": "",
+                      "expression": "",
+                      "key": "roleAlias",
+                      "required": false,
+                      "validateType": 0,
+                      "value": "administrator"
                     },
                     {
                       "children": [],
@@ -202,7 +210,18 @@
                       "description": "",
                       "error": "",
                       "expression": "",
-                      "key": "enabled",
+                      "key": "permission",
+                      "required": false,
+                      "validateType": 0,
+                      "value": "0"
+                    },
+                    {
+                      "children": [],
+                      "dataType": "Number",
+                      "description": "",
+                      "error": "",
+                      "expression": "",
+                      "key": "sort",
                       "required": false,
                       "validateType": 0,
                       "value": "1"
@@ -301,14 +320,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "5"
+          "value": "76"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 1,\n    \"list\": [\n      {\n        \"id\": \"1123598820738675201\",\n        \"tenantId\": \"000000\",\n        \"tenantName\": \"管理组\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 5\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 5,\n    \"list\": [\n      {\n        \"id\": \"1123598816738675201\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"超级管理员\",\n        \"roleAlias\": \"administrator\",\n        \"permission\": 0,\n        \"sort\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675202\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"用户\",\n        \"roleAlias\": \"user\",\n        \"permission\": 0,\n        \"sort\": 2,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675203\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"人事\",\n        \"roleAlias\": \"hr\",\n        \"permission\": 0,\n        \"sort\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675204\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"经理\",\n        \"roleAlias\": \"manager\",\n        \"permission\": 0,\n        \"sort\": 2,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675205\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"老板\",\n        \"roleAlias\": \"boss\",\n        \"permission\": 0,\n        \"sort\": 3,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 76\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -316,18 +335,19 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 15:55:06",
-  "createdAt": "2022-10-27 19:29:35",
+  "updatedAt": "2022-10-29 15:54:19",
+  "createdAt": "2022-10-29 15:43:58",
   "createdBy": "",
   "updatedBy": "",
-  "id": "653a48dc8a6049e5a016637c62d345fd"
+  "id": "267048474e3a47338eb9c54109c96407"
 }
 ================================*/
-return await db.table('sys_tenant')
+return await db.table('sys_role')
   .logic()
   .tenant()
   .where()
-  .like(not_blank(query.tenantId), 'tenantId', `%${query.tenantId}%`)
-  .like(not_blank(query.tenantName), 'tenantName', `%${query.tenantName}%`)
+  .eq(not_blank(query.tenantId), 'tenantId', query.tenantId)
+  .like(not_blank(query.roleName), 'roleName', `%${query.roleName}%`)
+  .like(not_blank(query.roleAlias), 'roleAlias', `%${query.roleAlias}%`)
   .orderBy('createdAt')
   .page(query.pageSize, query.current);

@@ -384,7 +384,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 02:29:46",
+  "updatedAt": "2022-10-29 15:54:50",
   "createdAt": "2022-10-28 23:35:43",
   "createdBy": "",
   "updatedBy": "",
@@ -392,7 +392,7 @@
 }
 ================================*/
 const toTree = async (parentId) => {
-  const list = await db.table('sys_dept').logic().where().eq('parentId', parentId).orderBy('sort').select();
+  const list = await db.table('sys_dept').logic().tenant().where().eq('parentId', parentId).orderBy('sort').select();
   for (const data of list) {
     const children = await toTree(data.id);
     if (children.length > 0) {
