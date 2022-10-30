@@ -97,6 +97,10 @@ export default {
       },
     },
   },
+  captcha: {
+    expirationTime: 1800,
+    idPrefix: 'midway:vc',
+  },
   magic: {
     prefix: '/magic',
     editorConfigPath: path.normalize(

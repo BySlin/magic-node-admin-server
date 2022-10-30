@@ -252,26 +252,26 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-28 23:27:05",
+  "updatedAt": "2022-10-30 19:09:11",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
   "id": "78c51101a4534e64b8f3c2f3689d944d"
 }
 ================================*/
-const assert = require('assert');
 //env模块
 const env = await importModule('env');
 //jwt模块
 const jwtService = await importModule('jwtService');
 //密码加密比较模块
 const passwordEncoder = await importModule('passwordEncoder');
-//缓存验证码Key
-const cacheCaptchaKey = "captcha:" + body.captchaKey;
-//从缓存取出验证码
-const captchaValue = await cache.get(cacheCaptchaKey);
+//验证码模块
+const captchaService = await importModule('captchaService');
 //比较验证码
-assert(captchaValue === body.captchaValue.toLowerCase(), "验证码错误");
+const passed = await captchaService.check(body.captchaKey, body.captchaValue);
+if (!passed) {
+  exit(400, '验证码错误');
+}
 
 const user = await db.table("sys_user")
   .where()
@@ -281,17 +281,14 @@ const user = await db.table("sys_user")
 if (user != null) {
   //比较密码是否一致
   if (passwordEncoder.decrypt(body.password, user.password)) {
-    //删除缓存中的验证码
-    await cache.del(cacheCaptchaKey);
-
     const expiresIn = env.get('jwt.expiresIn');
     const userContext = {
       id: user.id,
       username: user.username,
       tenantId: user.tenantId,
     };
-    const accessToken = await jwtService.sign(userContext);
 
+    const accessToken = await jwtService.sign(userContext);
     cache.set("token:" + accessToken, userContext, expiresIn);
 
     return {
