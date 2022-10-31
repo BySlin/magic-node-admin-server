@@ -78,13 +78,24 @@
           "required": true,
           "validateType": 0,
           "value": "jgz0"
+        },
+        {
+          "children": [],
+          "dataType": "Boolean",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "rememberMe",
+          "required": true,
+          "validateType": 0,
+          "value": "true"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"tenantId\": \"000000\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\"\r\n}",
+      "json": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"tenantId\": \"000000\",\r\n  \"captchaKey\": \"524ea27e489543a7a25d35b784e7528c\",\r\n  \"captchaValue\": \"jgz0\",\r\n  \"rememberMe\": true\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -252,7 +263,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-30 19:09:11",
+  "updatedAt": "2022-10-31 15:40:58",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -278,17 +289,18 @@ const user = await db.table("sys_user")
   .eq("username", body.username)
   .eq('tenantId', body.tenantId)
   .selectOne();
+
 if (user != null) {
   //比较密码是否一致
   if (passwordEncoder.decrypt(body.password, user.password)) {
-    const expiresIn = env.get('jwt.expiresIn');
+    const expiresIn = body.rememberMe ? env.get('jwt.expiresIn') : 1800;
     const userContext = {
       id: user.id,
       username: user.username,
       tenantId: user.tenantId,
     };
 
-    const accessToken = await jwtService.sign(userContext);
+    const accessToken = await jwtService.sign(userContext, { expiresIn });
     cache.set("token:" + accessToken, userContext, expiresIn);
 
     return {
