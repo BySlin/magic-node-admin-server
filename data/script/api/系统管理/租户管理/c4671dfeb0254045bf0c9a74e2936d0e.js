@@ -200,7 +200,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-27 19:40:19",
+  "updatedAt": "2022-10-31 22:24:30",
   "createdAt": "2022-10-27 19:22:55",
   "createdBy": "",
   "updatedBy": "",
@@ -209,8 +209,8 @@
 ================================*/
 
 if (body.tenantId) {
-  const pathCount = await db.table('sys_tenant').logic().where().eq('tenantId', body.tenantId).ne(not_null(body.id), 'id', body.id).count();
-  if (pathCount > 0) {
+  const tenantCount = await db.table('sys_tenant').logic().where().eq('tenantId', body.tenantId).ne(not_null(body.id), 'id', body.id).count();
+  if (tenantCount > 0) {
     exit(400, '租户已存在');
   }
 }
