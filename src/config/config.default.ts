@@ -68,6 +68,7 @@ export default {
         username: 'root', //数据库账号
         password: '12345678', //数据库密码
         port: 3306, //数据库端口
+        multipleStatements: true,
       },
     },
   },
