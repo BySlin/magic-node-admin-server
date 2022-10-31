@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 29/10/2022 02:36:58
+ Date: 31/10/2022 20:12:17
 */
 
 SET NAMES utf8mb4;
@@ -32,15 +32,20 @@ CREATE TABLE `sys_dept`  (
   `sort` int NULL DEFAULT 0 COMMENT '排序',
   `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `deleted` tinyint NULL DEFAULT 0 COMMENT '是否已删除',
+  `createdBy` bigint NULL DEFAULT NULL COMMENT '创建人',
+  `updatedBy` bigint NULL DEFAULT NULL COMMENT '更新人',
+  `createdAt` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `updatedAt` datetime NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '机构表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_dept
 -- ----------------------------
-INSERT INTO `sys_dept` VALUES (1123598813738675201, '000000', 0, '0', 1, 'MagicNodeTeam', 'MagicNodeTeam', 1, NULL, 0);
-INSERT INTO `sys_dept` VALUES (1123598813738675202, '000000', 1123598813738675201, '0,1123598813738675201', 1, 'Team1', 'Team1', 1, NULL, 0);
-INSERT INTO `sys_dept` VALUES (1123598813738675203, '000000', 1123598813738675201, '0,1123598813738675201', 1, 'Team2', 'Team2', 1, NULL, 0);
+INSERT INTO `sys_dept` VALUES (748179393636990976, '000000', 0, NULL, 1, '测试', '测试公司', 0, NULL, 0, 743789983910854656, NULL, '2022-10-29 14:58:53', NULL);
+INSERT INTO `sys_dept` VALUES (1123598813738675201, '000000', 0, '0', 1, 'MagicNodeTeam', 'MagicNodeTeam', 1, NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_dept` VALUES (1123598813738675202, '000000', 1123598813738675201, '0,1123598813738675201', 1, 'Team1', 'Team1', 1, NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_dept` VALUES (1123598813738675203, '000000', 1123598813738675201, '0,1123598813738675201', 1, 'Team2', 'Team2', 1, NULL, 0, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_dict
@@ -74,6 +79,12 @@ INSERT INTO `sys_dict` VALUES (746889715126370304, 0, '', 'org_category', '-1', 
 INSERT INTO `sys_dict` VALUES (746944839144177664, 746889715126370304, '', 'org_category', '1', '公司', 1, 0, 0, 743789983910854656, NULL, '2022-10-27 22:06:03', NULL);
 INSERT INTO `sys_dict` VALUES (746944943683010560, 746889715126370304, '', 'org_category', '2', '部门', 2, 0, 0, 743789983910854656, 743789983910854656, '2022-10-27 22:06:16', '2022-10-27 22:06:35');
 INSERT INTO `sys_dict` VALUES (746945054311972864, 746889715126370304, '', 'org_category', '3', '小组', 3, 0, 0, 743789983910854656, NULL, '2022-10-27 22:06:29', NULL);
+INSERT INTO `sys_dict` VALUES (748196456426373120, 0, '', 'data_permission', '-1', '数据权限', 1, 0, 0, 743789983910854656, NULL, '2022-10-29 15:32:48', NULL);
+INSERT INTO `sys_dict` VALUES (748196573749444608, 748196456426373120, '', 'data_permission', '0', '全部可见', 1, 0, 0, 743789983910854656, 743789983910854656, '2022-10-29 15:33:02', '2022-10-29 15:35:19');
+INSERT INTO `sys_dict` VALUES (748198389287485440, 748196456426373120, '', 'data_permission', '1', '本人可见', 1, 0, 0, 743789983910854656, NULL, '2022-10-29 15:36:38', NULL);
+INSERT INTO `sys_dict` VALUES (748198455272275968, 748196456426373120, '', 'data_permission', '2', '所在机构可见', 1, 0, 0, 743789983910854656, 743789983910854656, '2022-10-29 15:36:46', '2022-10-29 15:37:39');
+INSERT INTO `sys_dict` VALUES (748199550379884544, 748196456426373120, '', 'data_permission', '3', '所在机构及子级可见', 1, 0, 0, 743789983910854656, NULL, '2022-10-29 15:38:56', NULL);
+INSERT INTO `sys_dict` VALUES (748199614745673728, 748196456426373120, '', 'data_permission', '4', '自定义', 1, 0, 0, 743789983910854656, NULL, '2022-10-29 15:39:04', NULL);
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -111,33 +122,36 @@ INSERT INTO `sys_menu` VALUES (744790194753896448, 744713751759945728, 'system:m
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role`  (
   `id` bigint NOT NULL COMMENT '主键',
-  `tenantId` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '000000' COMMENT '租户ID',
-  `parentId` bigint NULL DEFAULT 0 COMMENT '父主键',
-  `roleName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色名',
+  `tenantId` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '000000' COMMENT '租户ID',
+  `roleName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '角色名',
+  `roleAlias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '角色别名',
+  `permission` tinyint NOT NULL COMMENT '数据权限 0 全部 1本人可见 2本级 3本级和子级 4自定义',
   `sort` int NULL DEFAULT 0 COMMENT '排序',
-  `roleAlias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色别名',
   `deleted` int NULL DEFAULT 0 COMMENT '是否已删除',
+  `createdBy` bigint NULL DEFAULT NULL COMMENT '创建人',
+  `updatedBy` bigint NULL DEFAULT NULL COMMENT '更新人',
+  `createdAt` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `updatedAt` datetime NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES (1123598816738675201, '000000', 0, '超级管理员', 1, 'administrator', 0);
-INSERT INTO `sys_role` VALUES (1123598816738675202, '000000', 0, '用户', 2, 'user', 0);
-INSERT INTO `sys_role` VALUES (1123598816738675203, '000000', 1123598816738675202, '人事', 1, 'hr', 0);
-INSERT INTO `sys_role` VALUES (1123598816738675204, '000000', 1123598816738675202, '经理', 2, 'manager', 0);
-INSERT INTO `sys_role` VALUES (1123598816738675205, '000000', 1123598816738675202, '老板', 3, 'boss', 0);
+INSERT INTO `sys_role` VALUES (748206733620412416, '000000', 'test', 'test', 0, 1, 0, 743789983910854656, NULL, '2022-10-29 15:53:13', NULL);
+INSERT INTO `sys_role` VALUES (1123598816738675201, '000000', '超级管理员', 'administrator', 0, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_role` VALUES (1123598816738675202, '000000', '用户', 'user', 0, 2, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_role` VALUES (1123598816738675203, '000000', '人事', 'hr', 0, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_role` VALUES (1123598816738675204, '000000', '经理', 'manager', 0, 2, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_role` VALUES (1123598816738675205, '000000', '老板', 'boss', 0, 3, 0, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_role_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE `sys_role_menu`  (
-  `id` bigint NOT NULL COMMENT '主键',
   `menuId` bigint NOT NULL COMMENT '菜单id',
-  `roleId` bigint NOT NULL COMMENT '角色id',
-  PRIMARY KEY (`id`) USING BTREE
+  `roleId` bigint NOT NULL COMMENT '角色id'
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色菜单关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------

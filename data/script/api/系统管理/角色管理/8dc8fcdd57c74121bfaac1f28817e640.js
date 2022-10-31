@@ -3,10 +3,10 @@
   "type": "api",
   "isFolder": false,
   "method": "POST",
-  "fileName": "保存字典",
-  "path": "/save",
+  "fileName": "菜单授权",
+  "path": "/grant/menu",
   "description": "",
-  "groupId": "f0ccd6099f5244cebff944f81ee40df7",
+  "groupId": "5cf5939cb80f43ff90e954657fc50b93",
   "fileLock": false,
   "enabled": true,
   "definition": {
@@ -23,94 +23,40 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "id",
+          "key": "roleId",
+          "required": false,
+          "validateType": 0,
+          "value": "748206733620412416"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "-",
+              "required": false,
+              "validateType": 0,
+              "value": "744713751759945728"
+            }
+          ],
+          "dataType": "Array",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "menuIds",
           "required": false,
           "validateType": 0,
           "value": ""
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "parentId",
-          "required": false,
-          "validateType": 0,
-          "value": "0"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "code",
-          "required": true,
-          "validateType": 0,
-          "value": "buttonType"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "dictKey",
-          "required": true,
-          "validateType": 0,
-          "value": "-1"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "dictValue",
-          "required": true,
-          "validateType": 0,
-          "value": "按钮类型"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "remark",
-          "required": false,
-          "validateType": 0,
-          "value": ""
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "sort",
-          "required": false,
-          "validateType": 0,
-          "value": "0"
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "sealed",
-          "required": false,
-          "validateType": 0,
-          "value": "0"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"parentId\": \"0\",\r\n  \"code\": \"buttonType\",\r\n  \"dictKey\": \"-1\",\r\n  \"dictValue\": \"按钮类型\",\r\n  \"remark\": \"\",\r\n  \"sort\": 0,\r\n  \"sealed\": 0\r\n}",
+      "json": "{\r\n  \"roleId\": \"748206733620412416\",\r\n  \"menuIds\": [\r\n    \"744713751759945728\"\r\n  ]\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -141,7 +87,7 @@
         },
         {
           "key": "content-length",
-          "value": "61",
+          "value": "70",
           "description": ""
         },
         {
@@ -151,7 +97,7 @@
         },
         {
           "key": "date",
-          "value": "Wed, 26 Oct 2022 16:32:55 GMT",
+          "value": "Mon, 31 Oct 2022 14:01:52 GMT",
           "description": ""
         },
         {
@@ -215,17 +161,28 @@
           "description": "",
           "error": "",
           "expression": "",
+          "key": "data",
+          "required": false,
+          "validateType": 0,
+          "value": "1"
+        },
+        {
+          "children": [],
+          "dataType": "Number",
+          "description": "",
+          "error": "",
+          "expression": "",
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "10"
+          "value": "23"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"executeTime\": 10\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": 1,\n  \"executeTime\": 23\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -233,32 +190,19 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 20:34:19",
-  "createdAt": "2022-10-25 22:09:14",
+  "updatedAt": "2022-10-31 22:01:52",
+  "createdAt": "2022-10-31 21:30:37",
   "createdBy": "",
   "updatedBy": "",
-  "id": "42ceca1eddb34ea39f96396bfb5b02ae"
+  "id": "8dc8fcdd57c74121bfaac1f28817e640"
 }
 ================================*/
-const dictCount = await db.table('sys_dict')
-  .logic()
-  .where()
-  .eq('code', body.code)
-  .eq('dictKey', body.dictKey)
-  .ne(not_null(body.id), 'id', body.id).count();
-if (dictCount > 0) {
-  exit(400, '当前字典键值已存在!');
-}
+const data = body.menuIds.map(menuId => ({
+  menuId,
+  roleId: body.roleId
+}));
 
-if (not_empty(body.id) && body.parentId === '0') {
-  const parentDict = await db.table('sys_dict').eq("id", body.id);
-  await db.table('sys_dict')
-    .where()
-    .eq("code", parentDict.code)
-    .ne("parentId", "0")
-    .update({
-      code: body.code
-    });
-}
-
-return await db.table("sys_dict").primary("id").withBlank().saveOrUpdate(body);
+return await db.transaction(async () => {
+  await db.table('sys_role_menu').where().eq('roleId', body.roleId).delete();
+  return await db.table('sys_role_menu').batchInsert(data);
+});
