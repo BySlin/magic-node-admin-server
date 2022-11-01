@@ -279,7 +279,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-01 17:17:28",
+  "updatedAt": "2022-11-01 17:37:34",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
@@ -291,7 +291,13 @@ const cacheDelete = await importFunction('/system/role/cache/delete');
 body.tenantId = ctx.user.tenantId;
 
 if (body.roleAlias) {
-  const roleAliasCount = await db.table('sys_role').logic().where().eq('roleAlias', body.roleAlias).ne(not_null(body.id), 'id', body.id).count();
+  const roleAliasCount = await db.table('sys_role')
+    .logic()
+    .tenant()
+    .where()
+    .eq('roleAlias', body.roleAlias)
+    .ne(not_null(body.id), 'id', body.id)
+    .count();
   if (roleAliasCount > 0) {
     exit(400, '角色别名已存在');
   }

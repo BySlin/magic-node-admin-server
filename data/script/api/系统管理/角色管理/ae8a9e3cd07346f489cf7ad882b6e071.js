@@ -257,14 +257,27 @@
       "required": false,
       "validateType": 0,
       "value": ""
+    },
+    "requestBodyDefinition": {
+      "requestType": "json",
+      "children": [],
+      "dataType": "",
+      "description": "",
+      "error": "",
+      "expression": "",
+      "json": "",
+      "key": "",
+      "required": false,
+      "validateType": 0,
+      "value": ""
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 21:08:02",
+  "updatedAt": "2022-11-01 17:38:02",
   "createdAt": "2022-10-31 21:06:59",
   "createdBy": "",
   "updatedBy": "",
   "id": "ae8a9e3cd07346f489cf7ad882b6e071"
 }
 ================================*/
-return await db.table("sys_role").where().eq('id', query.id).selectOne();
+return await db.table("sys_role").logic().tenant().where().eq('id', query.id).selectOne();

@@ -166,11 +166,13 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 15:51:38",
+  "updatedAt": "2022-11-01 17:39:09",
   "createdAt": "2022-10-29 15:50:59",
   "createdBy": "",
   "updatedBy": "",
   "id": "08536ecb40f6446fbc839470d7fc5c29"
 }
 ================================*/
-return 0;
+const ids = query.ids.split(',');
+
+return await db.table("sys_role").logic().tenant().where().in("id", ids).delete();

@@ -238,11 +238,11 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 21:08:58",
+  "updatedAt": "2022-11-01 17:40:23",
   "createdAt": "2022-10-31 21:08:32",
   "createdBy": "",
   "updatedBy": "",
   "id": "3aae0b4cfd3a47889cf5feb52facbe35"
 }
 ================================*/
-return await db.table("sys_tenant").where().eq('id', query.id).selectOne();
+return await db.table("sys_tenant").logic().tenant().where().eq('id', query.id).selectOne();
