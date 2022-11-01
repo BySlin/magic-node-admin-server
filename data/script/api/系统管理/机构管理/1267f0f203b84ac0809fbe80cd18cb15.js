@@ -293,11 +293,11 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 21:09:27",
+  "updatedAt": "2022-11-01 17:44:35",
   "createdAt": "2022-10-31 21:09:20",
   "createdBy": "",
   "updatedBy": "",
   "id": "1267f0f203b84ac0809fbe80cd18cb15"
 }
 ================================*/
-return await db.table("sys_dept").where().eq('id', query.id).selectOne();
+return await db.table("sys_dept").logic().where().eq('id', query.id).selectOne();

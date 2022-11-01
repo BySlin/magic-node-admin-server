@@ -282,11 +282,11 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 21:08:13",
+  "updatedAt": "2022-11-01 17:44:20",
   "createdAt": "2022-10-31 21:07:46",
   "createdBy": "",
   "updatedBy": "",
   "id": "2c28041305b04aaf9c145538e55df5df"
 }
 ================================*/
-return await db.table("sys_dict").where().eq('id', query.id).selectOne();
+return await db.table("sys_dict").logic().where().eq('id', query.id).selectOne();
