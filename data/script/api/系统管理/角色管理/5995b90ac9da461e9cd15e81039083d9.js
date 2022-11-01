@@ -279,7 +279,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-01 17:37:34",
+  "updatedAt": "2022-11-01 19:35:54",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
@@ -304,8 +304,8 @@ if (body.roleAlias) {
 }
 
 return await db.transaction(async () => {
-  const deptIds = body.deptIds;
-  const menuIds = body.menuIds;
+  const deptIds = ifnull(body.deptIds, []);
+  const menuIds = ifnull(body.menuIds, []);
 
   delete body.deptIds;
   delete body.menuIds;
@@ -314,16 +314,23 @@ return await db.transaction(async () => {
   const roleId = not_blank(body.id) ? body.id : result;
 
   await db.table('sys_role_menu').where().eq('roleId', roleId).delete();
-  await db.table('sys_role_menu').batchInsert(menuIds.map(menuId => ({
-    menuId,
-    roleId
-  })));
+
+  if (menuIds.length > 0) {
+    await db.table('sys_role_menu').batchInsert(menuIds.map(menuId => ({
+      menuId,
+      roleId
+    })));
+  }
+
 
   await db.table('sys_role_dept').where().eq('roleId', roleId).delete();
-  await db.table('sys_role_dept').batchInsert(deptIds.map(deptId => ({
-    deptId,
-    roleId
-  })));
+
+  if (deptIds.length > 0) {
+    await db.table('sys_role_dept').batchInsert(deptIds.map(deptId => ({
+      deptId,
+      roleId
+    })));
+  }
 
   return result;
 });
