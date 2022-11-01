@@ -82,13 +82,70 @@
           "required": false,
           "validateType": 0,
           "value": "1"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "remark",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "-",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            }
+          ],
+          "dataType": "Array",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "menuIds",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "-",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            }
+          ],
+          "dataType": "Array",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "deptIds",
+          "required": false,
+          "validateType": 0,
+          "value": ""
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"roleName\": \"test\",\r\n  \"roleAlias\": \"test\",\r\n  \"permission\": 0,\r\n  \"sort\": 1\r\n}",
+      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"roleName\": \"test\",\r\n  \"roleAlias\": \"test\",\r\n  \"permission\": 0,\r\n  \"sort\": 1,\r\n  \"remark\": \"\",\r\n  \"menuIds\": [\"\"],\r\n  \"deptIds\": [\"\"]\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -222,7 +279,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 22:23:59",
+  "updatedAt": "2022-11-01 17:17:28",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
@@ -240,4 +297,27 @@ if (body.roleAlias) {
   }
 }
 
-return await db.table("sys_role").primary("id").withBlank().saveOrUpdate(body);
+return await db.transaction(async () => {
+  const deptIds = body.deptIds;
+  const menuIds = body.menuIds;
+
+  delete body.deptIds;
+  delete body.menuIds;
+
+  const result = await db.table("sys_role").primary("id").withBlank().saveOrUpdate(body);
+  const roleId = not_blank(body.id) ? body.id : result;
+
+  await db.table('sys_role_menu').where().eq('roleId', roleId).delete();
+  await db.table('sys_role_menu').batchInsert(menuIds.map(menuId => ({
+    menuId,
+    roleId
+  })));
+
+  await db.table('sys_role_dept').where().eq('roleId', roleId).delete();
+  await db.table('sys_role_dept').batchInsert(deptIds.map(deptId => ({
+    deptId,
+    roleId
+  })));
+
+  return result;
+});

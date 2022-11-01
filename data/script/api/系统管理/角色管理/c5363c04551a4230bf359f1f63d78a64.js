@@ -3,8 +3,8 @@
   "type": "api",
   "isFolder": false,
   "method": "GET",
-  "fileName": "获取角色授权组织IDS",
-  "path": "/dept/ids",
+  "fileName": "获取菜单权限和数据权限",
+  "path": "/raw/permission",
   "description": "",
   "groupId": "5cf5939cb80f43ff90e954657fc50b93",
   "fileLock": false,
@@ -25,6 +25,19 @@
     "options": [],
     "paths": [],
     "headers": [],
+    "requestBodyDefinition": {
+      "requestType": "json",
+      "children": [],
+      "dataType": "",
+      "description": "",
+      "error": "",
+      "expression": "",
+      "json": "",
+      "key": "",
+      "required": false,
+      "validateType": 0,
+      "value": ""
+    },
     "responseBodyDefinition": {
       "responseType": "json",
       "headers": [
@@ -35,7 +48,7 @@
         },
         {
           "key": "content-length",
-          "value": "90",
+          "value": "220",
           "description": ""
         },
         {
@@ -45,7 +58,7 @@
         },
         {
           "key": "date",
-          "value": "Tue, 01 Nov 2022 07:28:23 GMT",
+          "value": "Tue, 01 Nov 2022 09:13:49 GMT",
           "description": ""
         },
         {
@@ -106,18 +119,53 @@
         {
           "children": [
             {
-              "children": [],
-              "dataType": "String",
+              "children": [
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "-",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "744690820434624512"
+                }
+              ],
+              "dataType": "Array",
               "description": "",
               "error": "",
               "expression": "",
-              "key": "-",
+              "key": "menuIds",
               "required": false,
               "validateType": 0,
-              "value": "748179393636990976"
+              "value": ""
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "-",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "748179393636990976"
+                }
+              ],
+              "dataType": "Array",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "deptIds",
+              "required": false,
+              "validateType": 0,
+              "value": ""
             }
           ],
-          "dataType": "Array",
+          "dataType": "Object",
           "description": "",
           "error": "",
           "expression": "",
@@ -135,14 +183,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "8"
+          "value": "6"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    \"748179393636990976\"\n  ],\n  \"executeTime\": 8\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"menuIds\": [\n      \"744690820434624512\",\n      \"744713751759945728\",\n      \"744758062442610688\",\n      \"744756041593389056\"\n    ],\n    \"deptIds\": [\n      \"748179393636990976\",\n      \"1123598813738675202\"\n    ]\n  },\n  \"executeTime\": 6\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -150,11 +198,17 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-01 15:28:23",
-  "createdAt": "2022-11-01 15:25:12",
+  "updatedAt": "2022-11-01 17:13:49",
+  "createdAt": "2022-11-01 16:38:52",
   "createdBy": "",
   "updatedBy": "",
-  "id": "912738a183da461ab382b059b6553379"
+  "id": "c5363c04551a4230bf359f1f63d78a64"
 }
 ================================*/
-return (await db.table('sys_role_dept').where().eq('roleId', query.id).select()).map(d => d.deptId);
+const menuIds = (await db.table('sys_role_menu').where().eq('roleId', query.id).select()).map(d => d.menuId);
+const deptIds = (await db.table('sys_role_dept').where().eq('roleId', query.id).select()).map(d => d.deptId);
+
+return {
+  menuIds,
+  deptIds
+};
