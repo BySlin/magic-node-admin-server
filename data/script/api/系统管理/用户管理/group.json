@@ -1,0 +1,19 @@
+{
+  "groupId": "019ad1b135004467a9f12eca9d58bfbf",
+  "type": "api",
+  "method": "Group",
+  "definition": {},
+  "isFolder": true,
+  "enabled": true,
+  "script": "",
+  "fileLock": false,
+  "fileName": "用户管理",
+  "path": "/user",
+  "description": "",
+  "returnType": "",
+  "updatedAt": "",
+  "createdAt": "2022-11-01 16:11:11",
+  "createdBy": "",
+  "updatedBy": "",
+  "id": "54d7b65487a3419c8cad96b4e7120d46"
+}
