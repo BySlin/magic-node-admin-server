@@ -3,10 +3,10 @@
   "type": "api",
   "isFolder": false,
   "method": "POST",
-  "fileName": "保存机构",
+  "fileName": "保存用户",
   "path": "/save",
   "description": "",
-  "groupId": "e65076e23083465b8aec7b3b8803fd7f",
+  "groupId": "54d7b65487a3419c8cad96b4e7120d46",
   "fileLock": false,
   "enabled": true,
   "definition": {
@@ -45,10 +45,65 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "parentId",
+          "key": "username",
           "required": false,
           "validateType": 0,
-          "value": "0"
+          "value": "test"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "password",
+          "required": false,
+          "validateType": 0,
+          "value": "E10ADC3949BA59ABBE56E057F20F883E"
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "nickname",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "realname",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "avator",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [],
+          "dataType": "String",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "deptId",
+          "required": false,
+          "validateType": 0,
+          "value": ""
         },
         {
           "children": [],
@@ -56,72 +111,17 @@
           "description": "",
           "error": "",
           "expression": "",
-          "key": "deptCategory",
-          "required": true,
+          "key": "enabled",
+          "required": false,
           "validateType": 0,
           "value": "1"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "deptName",
-          "required": true,
-          "validateType": 0,
-          "value": "测试"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "fullName",
-          "required": true,
-          "validateType": 0,
-          "value": "测试公司"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "ancestors",
-          "required": false,
-          "validateType": 0,
-          "value": ""
-        },
-        {
-          "children": [],
-          "dataType": "Number",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "sort",
-          "required": true,
-          "validateType": 0,
-          "value": "0"
-        },
-        {
-          "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "remark",
-          "required": false,
-          "validateType": 0,
-          "value": ""
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"parentId\": \"0\",\r\n  \"deptCategory\": 1,\r\n  \"deptName\": \"测试\",\r\n  \"fullName\": \"测试公司\",\r\n  \"ancestors\": \"\",\r\n  \"sort\": 0,\r\n  \"remark\": \"\"\r\n}",
+      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"username\": \"test\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"nickname\": \"\",\r\n  \"realname\": \"\",\r\n  \"avator\": \"\",\r\n  \"deptId\": \"\",\r\n  \"enabled\": 1\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -152,7 +152,7 @@
         },
         {
           "key": "content-length",
-          "value": "89",
+          "value": "90",
           "description": ""
         },
         {
@@ -162,7 +162,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 29 Oct 2022 06:58:54 GMT",
+          "value": "Thu, 03 Nov 2022 13:16:00 GMT",
           "description": ""
         },
         {
@@ -229,7 +229,7 @@
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "748179393636990976"
+          "value": "751993076452425728"
         },
         {
           "children": [],
@@ -240,14 +240,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "71"
+          "value": "168"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"748179393636990976\",\n  \"executeTime\": 71\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"751993076452425728\",\n  \"executeTime\": 168\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -255,27 +255,29 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 20:57:15",
-  "createdAt": "2022-10-27 19:21:48",
+  "updatedAt": "2022-11-03 21:25:57",
+  "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
-  "id": "8ca97c381eb24bfd82200c17ce210560"
+  "id": "c50b8d9ae2dc45d7b62972a059211106"
 }
 ================================*/
-if (is_empty(body.parentId)) {
-  body.parentId = "0";
-  body.tenantId = ctx.user.tenantId;
-}
-if (body.parentId !== '0') {
-  const parentDept = await db.table('sys_dept').logic().where().eq("id", body.parentId).selectOne();
-  if (is_null(parentDept)) {
-    exit(400, '父节点不存在');
-  }
-  if (body.parentId === body.id) {
-    exit(400, '父节点不可选择自身!');
-  }
-  body.tenantId = parentDept.tenantId;
-  body.ancestors = parentDept.ancestors + ',' + body.parentId;
+const checkTenantId = await importFunction('/auth/checkTenantId');
+//密码加密比较模块
+const passwordEncoder = await importModule('passwordEncoder');
+const isUpdate = not_blank(body.id);
+const tenantId = ctx.user.tenantId;
+
+if (is_blank(body.tenantId)) {
+  body.tenantId = tenantId;
+} else if (!checkTenantId(tenantId) && body.tenantId !== tenantId) {
+  exit(400, "禁止越权操作");
 }
 
-return await db.table("sys_dept").primary("id").withBlank().saveOrUpdate(body);
+if (isUpdate) {
+  delete body.password;
+} else {
+  body.password = passwordEncoder.encrypt(body.password);
+}
+
+return await db.table("sys_user").primary("id").withBlank().saveOrUpdate(body);

@@ -3,8 +3,8 @@
   "type": "function",
   "isFolder": false,
   "method": "Fn",
-  "fileName": "是否登录",
-  "path": "/checkLogin",
+  "fileName": "根据IDS判断是否超级管理员",
+  "path": "/checkSuperAdminIds",
   "description": "",
   "groupId": "9a0dde73dc7044d0a8af56bc900d4737",
   "fileLock": false,
@@ -13,10 +13,10 @@
   "definition": {
     "parameters": [
       {
-        "description": "请求上下文",
+        "description": "",
         "expression": "",
-        "key": "ctx",
-        "dataType": "Object",
+        "key": "ids",
+        "dataType": "Array",
         "required": false,
         "error": "",
         "validateType": 0,
@@ -24,13 +24,13 @@
       }
     ]
   },
-  "updatedAt": "2022-10-23 15:23:42",
-  "createdAt": "2022-10-23 14:19:37",
+  "updatedAt": "2022-11-03 21:21:57",
+  "createdAt": "2022-11-03 21:20:17",
   "createdBy": "",
   "updatedBy": "",
-  "id": "9eb8e005554e4444bb712db235ab9199"
+  "id": "a9ba8dd387be4bd0ada96f4bdd8263ef"
 }
 ================================*/
-const jwtService = await importModule('jwtService');
+const SUPER_ADMIN_ID = '743789983910854656';
 
-return "hello magic-node";
+return ids.includes(SUPER_ADMIN_ID);

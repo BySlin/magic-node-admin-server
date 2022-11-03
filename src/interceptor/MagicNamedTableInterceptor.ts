@@ -16,6 +16,11 @@ export class MagicNamedTableInterceptor implements NamedTableInterceptor {
         namedTable.column('id', value.toString());
         namedTable.column('createdAt', dayjs().format(formatTemplate));
         namedTable.column('createdBy', ctx.user?.id);
+
+        //多租户模式填充租户字段
+        if (namedTable.getAttribute(TENANT_MODE)) {
+          namedTable.column('tenantId', ctx.user?.tenantId);
+        }
       } else if (SqlMode.UPDATE === sqlMode) {
         namedTable.column('updatedAt', dayjs().format(formatTemplate));
         namedTable.column('updatedBy', ctx.user?.id);
@@ -29,6 +34,7 @@ export class MagicNamedTableInterceptor implements NamedTableInterceptor {
         SqlMode.COUNT === sqlMode ||
         SqlMode.PAGE === sqlMode
       ) {
+        //多租户模式添加租户字段比较
         if (ctx.user?.tenantId !== ADMIN_TENANT_ID) {
           namedTable.where().eq('tenantId', ctx.user.tenantId);
         }
