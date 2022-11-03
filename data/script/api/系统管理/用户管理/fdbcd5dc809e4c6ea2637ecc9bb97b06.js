@@ -98,7 +98,7 @@
         },
         {
           "key": "content-length",
-          "value": "585",
+          "value": "558",
           "description": ""
         },
         {
@@ -108,7 +108,7 @@
         },
         {
           "key": "date",
-          "value": "Thu, 03 Nov 2022 13:27:15 GMT",
+          "value": "Thu, 03 Nov 2022 13:41:29 GMT",
           "description": ""
         },
         {
@@ -376,14 +376,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "9"
+          "value": "18"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 2,\n    \"list\": [\n      {\n        \"id\": \"743789983910854656\",\n        \"username\": \"admin\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"deptId\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-10-23T05:37:55.000Z\",\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"751993076452425728\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"deptId\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-11-03T13:16:00.000Z\",\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 9\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 2,\n    \"list\": [\n      {\n        \"id\": \"743789983910854656\",\n        \"username\": \"admin\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-10-23T05:37:55.000Z\",\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"751993076452425728\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-11-03T13:16:00.000Z\",\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 18\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -391,7 +391,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 21:27:15",
+  "updatedAt": "2022-11-03 21:41:29",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",

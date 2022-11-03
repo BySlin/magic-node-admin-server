@@ -75,7 +75,7 @@
         },
         {
           "key": "content-length",
-          "value": "1068",
+          "value": "577",
           "description": ""
         },
         {
@@ -85,7 +85,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 29 Oct 2022 07:52:26 GMT",
+          "value": "Thu, 03 Nov 2022 13:40:40 GMT",
           "description": ""
         },
         {
@@ -320,14 +320,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "76"
+          "value": "5"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 5,\n    \"list\": [\n      {\n        \"id\": \"1123598816738675201\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"超级管理员\",\n        \"roleAlias\": \"administrator\",\n        \"permission\": 0,\n        \"sort\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675202\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"用户\",\n        \"roleAlias\": \"user\",\n        \"permission\": 0,\n        \"sort\": 2,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675203\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"人事\",\n        \"roleAlias\": \"hr\",\n        \"permission\": 0,\n        \"sort\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675204\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"经理\",\n        \"roleAlias\": \"manager\",\n        \"permission\": 0,\n        \"sort\": 2,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"1123598816738675205\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"老板\",\n        \"roleAlias\": \"boss\",\n        \"permission\": 0,\n        \"sort\": 3,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 76\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 2,\n    \"list\": [\n      {\n        \"id\": \"1123598816738675201\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"超级管理员\",\n        \"roleAlias\": \"SUPER_ADMIN\",\n        \"permission\": 0,\n        \"remark\": null,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null\n      },\n      {\n        \"id\": \"748206733620412416\",\n        \"tenantId\": \"000000\",\n        \"roleName\": \"管理员\",\n        \"roleAlias\": \"admin\",\n        \"permission\": 0,\n        \"remark\": null,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-10-29T07:53:13.000Z\",\n        \"updatedAt\": \"2022-11-01T11:36:18.000Z\"\n      }\n    ]\n  },\n  \"executeTime\": 5\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -335,7 +335,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 15:54:19",
+  "updatedAt": "2022-11-03 21:40:40",
   "createdAt": "2022-10-29 15:43:58",
   "createdBy": "",
   "updatedBy": "",
