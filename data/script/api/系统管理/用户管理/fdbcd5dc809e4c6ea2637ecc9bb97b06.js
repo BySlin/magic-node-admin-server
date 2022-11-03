@@ -49,7 +49,7 @@
         "required": false,
         "error": "",
         "validateType": 0,
-        "value": "admin"
+        "value": ""
       },
       {
         "description": "",
@@ -108,7 +108,7 @@
         },
         {
           "key": "content-length",
-          "value": "89",
+          "value": "374",
           "description": ""
         },
         {
@@ -118,7 +118,7 @@
         },
         {
           "key": "date",
-          "value": "Thu, 03 Nov 2022 14:38:26 GMT",
+          "value": "Thu, 03 Nov 2022 14:54:42 GMT",
           "description": ""
         },
         {
@@ -364,14 +364,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "9"
+          "value": "6"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 0,\n    \"list\": []\n  },\n  \"executeTime\": 9\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 1,\n    \"list\": [\n      {\n        \"id\": \"752042257804165120\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": null,\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-11-03T14:53:43.000Z\",\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 6\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -379,7 +379,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 22:40:06",
+  "updatedAt": "2022-11-03 22:54:42",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
