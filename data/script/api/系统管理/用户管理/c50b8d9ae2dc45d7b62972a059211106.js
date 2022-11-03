@@ -96,17 +96,6 @@
         },
         {
           "children": [],
-          "dataType": "String",
-          "description": "",
-          "error": "",
-          "expression": "",
-          "key": "deptId",
-          "required": false,
-          "validateType": 0,
-          "value": ""
-        },
-        {
-          "children": [],
           "dataType": "Number",
           "description": "",
           "error": "",
@@ -115,13 +104,59 @@
           "required": false,
           "validateType": 0,
           "value": "1"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "-",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            }
+          ],
+          "dataType": "Array",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "deptIds",
+          "required": false,
+          "validateType": 0,
+          "value": ""
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dataType": "String",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "-",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            }
+          ],
+          "dataType": "Array",
+          "description": "",
+          "error": "",
+          "expression": "",
+          "key": "roleIds",
+          "required": false,
+          "validateType": 0,
+          "value": ""
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"username\": \"test\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"nickname\": \"\",\r\n  \"realname\": \"\",\r\n  \"avator\": \"\",\r\n  \"deptId\": \"\",\r\n  \"enabled\": 1\r\n}",
+      "json": "{\r\n  \"id\": \"\",\r\n  \"tenantId\": \"000000\",\r\n  \"username\": \"test\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\",\r\n  \"nickname\": \"\",\r\n  \"realname\": \"\",\r\n  \"avator\": \"\",\r\n  \"enabled\": 1,\r\n  \"deptIds\": [\r\n    \"\"\r\n  ],\r\n  \"roleIds\": [\r\n    \"\"\r\n  ]\r\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -255,7 +290,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 21:25:57",
+  "updatedAt": "2022-11-03 21:34:22",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
@@ -279,5 +314,34 @@ if (isUpdate) {
 } else {
   body.password = passwordEncoder.encrypt(body.password);
 }
+return await db.transaction(async () => {
+  const deptIds = ifnull(body.deptIds, []);
+  const roleIds = ifnull(body.roleIds, []);
 
-return await db.table("sys_user").primary("id").withBlank().saveOrUpdate(body);
+  delete body.deptIds;
+  delete body.roleIds;
+
+  const result = await db.table("sys_user").primary("id").withBlank().saveOrUpdate(body);
+  const userId = isUpdate ? body.id : result;
+
+  await db.table('sys_user_role').where().eq('roleId', roleId).delete();
+
+  if (roleIds.length > 0) {
+    await db.table('sys_user_role').batchInsert(roleIds.map(roleId => ({
+      userId,
+      roleId
+    })));
+  }
+
+
+  await db.table('sys_user_dept').where().eq('roleId', roleId).delete();
+
+  if (deptIds.length > 0) {
+    await db.table('sys_user_dept').batchInsert(deptIds.map(deptId => ({
+      userId,
+      deptId
+    })));
+  }
+
+  return result;
+});
