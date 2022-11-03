@@ -379,7 +379,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 22:38:26",
+  "updatedAt": "2022-11-03 22:40:06",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
@@ -397,17 +397,7 @@ const table = db.table('sys_user')
 
 if (not_blank(query.deptId)) {
   const deptIds = query.deptId.split(',');
-
-  table.append(`
-              id in (
-                SELECT
-                    userId
-                FROM
-                    sys_user_dept
-                WHERE
-                deptId IN (
-  `)
-
+  table.append(`id in ( SELECT userId FROM sys_user_dept WHERE deptId IN (`)
   table.append(
     Array.from({ length: deptIds.length })
       .map(() => '?')
@@ -420,16 +410,7 @@ if (not_blank(query.deptId)) {
 
 if (not_blank(query.roleId)) {
   const roleIds = query.roleId.split(',');
-
-  table.append(`
-              id in (
-                SELECT
-                    userId
-                FROM
-                    sys_user_role
-                WHERE
-                roleId IN (
-  `)
+  table.append(`id in ( SELECT userId FROM sys_user_role WHERE roleId IN (`)
 
   table.append(
     Array.from({ length: roleIds.length })
