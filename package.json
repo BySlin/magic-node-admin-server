@@ -4,18 +4,18 @@
   "description": "",
   "private": false,
   "dependencies": {
-    "@midwayjs/bootstrap": "^3.7.1",
-    "@midwayjs/bull-board": "^3.7.1",
-    "@midwayjs/cache": "^3.7.1",
-    "@midwayjs/captcha": "^3.7.1",
+    "@midwayjs/bootstrap": "^3.7.3",
+    "@midwayjs/bull-board": "^3.7.3",
+    "@midwayjs/cache": "^3.7.3",
+    "@midwayjs/captcha": "^3.7.3",
     "@midwayjs/core": "^3.7.0",
     "@midwayjs/decorator": "^3.7.0",
-    "@midwayjs/info": "^3.7.1",
-    "@midwayjs/jwt": "^3.7.1",
-    "@midwayjs/koa": "^3.7.1",
+    "@midwayjs/info": "^3.7.3",
+    "@midwayjs/jwt": "^3.7.3",
+    "@midwayjs/koa": "^3.7.3",
     "@midwayjs/logger": "^2.17.0",
-    "@midwayjs/security": "^3.7.1",
-    "@midwayjs/validate": "^3.7.1",
+    "@midwayjs/security": "^3.7.3",
+    "@midwayjs/validate": "^3.7.3",
     "@theroyalwhee0/snowman": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "cache-manager": "^5.1.3",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.3.16",
-    "@midwayjs/mock": "^3.7.1",
+    "@midwayjs/mock": "^3.7.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/crypto-js": "^4.1.1",
     "@types/jest": "^29.2.1",
@@ -58,8 +58,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/BySlin/magic-node-admin-server.git"
   },
-  "author": "anonymous",
+  "author": "BySlin",
   "license": "MIT"
 }
