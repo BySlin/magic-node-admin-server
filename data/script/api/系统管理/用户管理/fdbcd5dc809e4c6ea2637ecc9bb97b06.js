@@ -118,7 +118,7 @@
         },
         {
           "key": "content-length",
-          "value": "374",
+          "value": "770",
           "description": ""
         },
         {
@@ -128,7 +128,7 @@
         },
         {
           "key": "date",
-          "value": "Thu, 03 Nov 2022 14:54:42 GMT",
+          "value": "Fri, 04 Nov 2022 13:52:15 GMT",
           "description": ""
         },
         {
@@ -374,14 +374,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "6"
+          "value": "7"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 1,\n    \"list\": [\n      {\n        \"id\": \"752042257804165120\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": null,\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": null,\n        \"createdAt\": \"2022-11-03T14:53:43.000Z\",\n        \"updatedAt\": null\n      }\n    ]\n  },\n  \"executeTime\": 6\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 2,\n    \"list\": [\n      {\n        \"id\": \"752042257804165120\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": \"748206733620412416\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-03T14:53:43.000Z\",\n        \"updatedAt\": \"2022-11-04T06:43:39.000Z\"\n      },\n      {\n        \"id\": \"752520938813128704\",\n        \"username\": \"test11\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": \"748206733620412416\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-04T06:44:46.000Z\",\n        \"updatedAt\": \"2022-11-04T07:17:41.000Z\"\n      }\n    ]\n  },\n  \"executeTime\": 7\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -389,7 +389,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 15:20:14",
+  "updatedAt": "2022-11-04 21:52:57",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
@@ -408,29 +408,16 @@ const table = db.table('sys_user')
 
 if (not_blank(query.deptId)) {
   const deptIds = query.deptId.split(',');
-  table.append(`id in ( SELECT userId FROM sys_user_dept WHERE deptId IN (`)
-  table.append(
-    Array.from({ length: deptIds.length })
-      .map(() => '?')
-      .join(',')
-  );
-  table.append('))');
-  table.appendAnd();
-  table.params.push(...deptIds);
+  table.custom(`id in ( SELECT userId FROM sys_user_dept WHERE deptId IN ( ${Array.from({ length: deptIds.length })
+    .map(() => '?')
+    .join(',')} ) )`, deptIds);
 }
 
 if (not_blank(query.roleId)) {
   const roleIds = query.roleId.split(',');
-  table.append(`id in ( SELECT userId FROM sys_user_role WHERE roleId IN (`)
-
-  table.append(
-    Array.from({ length: roleIds.length })
-      .map(() => '?')
-      .join(',')
-  );
-  table.append('))');
-  table.appendAnd();
-  table.params.push(...roleIds);
+  table.custom(`id in ( SELECT userId FROM sys_user_role WHERE roleId IN ( ${Array.from({ length: roleIds.length })
+    .map(() => '?')
+    .join(',')} ) )`, roleIds);
 }
 
 return await table

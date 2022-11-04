@@ -18,8 +18,13 @@
       "responseType": "json",
       "headers": [
         {
+          "key": "connection",
+          "value": "keep-alive",
+          "description": ""
+        },
+        {
           "key": "content-length",
-          "value": "139",
+          "value": "286",
           "description": ""
         },
         {
@@ -29,7 +34,27 @@
         },
         {
           "key": "date",
-          "value": "Sun, 23 Oct 2022 07:11:43 GMT",
+          "value": "Fri, 04 Nov 2022 13:26:31 GMT",
+          "description": ""
+        },
+        {
+          "key": "keep-alive",
+          "value": "timeout=5",
+          "description": ""
+        },
+        {
+          "key": "vary",
+          "value": "Origin",
+          "description": ""
+        },
+        {
+          "key": "x-frame-options",
+          "value": "SAMEORIGIN",
+          "description": ""
+        },
+        {
+          "key": "x-xss-protection",
+          "value": "1; mode=block",
           "description": ""
         }
       ],
@@ -76,7 +101,7 @@
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "{bcrypt}$2a$10$d79uZf3HFNOhjA4oQC9Cme1YF1Vle90L4DvKtKRkIMWjS2WrUxt2G"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsImlhdCI6MTY2NzU2ODI3MiwiZXhwIjoxNjY3NjU0NjcyfQ.SgagtmqG5uvhT8qGsU9se9f_l0E99bPSfbFD8qlbOBA"
         },
         {
           "children": [],
@@ -87,14 +112,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "62"
+          "value": "71"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"{bcrypt}$2a$10$d79uZf3HFNOhjA4oQC9Cme1YF1Vle90L4DvKtKRkIMWjS2WrUxt2G\",\n  \"executeTime\": 62\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsImlhdCI6MTY2NzU2ODI3MiwiZXhwIjoxNjY3NjU0NjcyfQ.SgagtmqG5uvhT8qGsU9se9f_l0E99bPSfbFD8qlbOBA\",\n  \"executeTime\": 71\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -115,7 +140,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-23 15:11:43",
+  "updatedAt": "2022-11-04 21:27:03",
   "createdAt": "2022-10-22 16:43:16",
   "createdBy": "",
   "updatedBy": "",
@@ -127,10 +152,10 @@ const crypto = require('crypto-js');
 const passwordEncoder = await importModule('passwordEncoder');
 const password = passwordEncoder.encrypt("E10ADC3949BA59ABBE56E057F20F883E");
 
-db.table('sys_user').primary("id").save({
-  username: "admin",
-  password
-});
+// db.table('sys_user').primary("id").save({
+//   username: "admin",
+//   password
+// });
 
 //E10ADC3949BA59ABBE56E057F20F883E
 return password;

@@ -13,7 +13,7 @@
   "definition": {
     "sort": 0
   },
-  "updatedAt": "2022-10-23 17:23:00",
+  "updatedAt": "2022-11-04 21:26:23",
   "createdAt": "2022-10-23 13:54:11",
   "createdBy": "",
   "updatedBy": "",
@@ -56,6 +56,7 @@ try {
   }
   // 存储到访问上下文中
   ctx.user = cacheUser;
+  ctx.token = token;
 } catch (e) {
   throw new httpError.UnauthorizedError(e.message);
 }

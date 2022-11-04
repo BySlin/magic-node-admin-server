@@ -263,7 +263,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-31 15:40:58",
+  "updatedAt": "2022-11-04 22:04:22",
   "createdAt": "2022-10-22 15:22:17",
   "createdBy": "",
   "updatedBy": "",
@@ -285,10 +285,16 @@ if (!passed) {
 }
 
 const user = await db.table("sys_user")
+  .excludes('createdBy', 'updatedBy', 'createdAt', 'updatedAt', 'deleted', 'deptId', 'roleId')
+  .logic()
   .where()
   .eq("username", body.username)
   .eq('tenantId', body.tenantId)
   .selectOne();
+
+if (!user.enabled) {
+  exit(400, "账户已被禁用，请联系管理员！");
+}
 
 if (user != null) {
   //比较密码是否一致
@@ -301,7 +307,9 @@ if (user != null) {
     };
 
     const accessToken = await jwtService.sign(userContext, { expiresIn });
-    cache.set("token:" + accessToken, userContext, expiresIn);
+
+    delete user.password;
+    cache.set("token:" + accessToken, user, expiresIn);
 
     return {
       expiresIn,

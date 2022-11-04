@@ -266,7 +266,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 16:35:52",
+  "updatedAt": "2022-11-04 22:00:34",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
@@ -282,7 +282,12 @@ const tenantId = ctx.user.tenantId;
 if (is_blank(body.tenantId)) {
   body.tenantId = tenantId;
 } else if (!(await checkTenantId(tenantId)) && body.tenantId !== tenantId) {
-  exit(400, "禁止越权操作");
+  exit(400, "禁止越权操作！");
+}
+
+const exists = await db.table('sys_user').logic().tenant().where().eq('username', body.username).ne(not_null(body.id), 'id', body.id).exists();
+if (exists) {
+  exit(400, '用户账户不能重复！');
 }
 
 if (isUpdate) {

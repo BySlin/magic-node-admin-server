@@ -332,10 +332,23 @@
       "required": false,
       "validateType": 0,
       "value": ""
+    },
+    "requestBodyDefinition": {
+      "requestType": "json",
+      "children": [],
+      "dataType": "",
+      "description": "",
+      "error": "",
+      "expression": "",
+      "json": "",
+      "key": "",
+      "required": false,
+      "validateType": 0,
+      "value": ""
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 21:40:40",
+  "updatedAt": "2022-11-04 22:29:23",
   "createdAt": "2022-10-29 15:43:58",
   "createdBy": "",
   "updatedBy": "",
@@ -349,5 +362,5 @@ return await db.table('sys_role')
   .eq(not_blank(query.tenantId), 'tenantId', query.tenantId)
   .like(not_blank(query.roleName), 'roleName', `%${query.roleName}%`)
   .like(not_blank(query.roleAlias), 'roleAlias', `%${query.roleAlias}%`)
-  .orderBy('createdAt')
+  .orderByDesc('createdAt')
   .page(query.pageSize, query.current);
