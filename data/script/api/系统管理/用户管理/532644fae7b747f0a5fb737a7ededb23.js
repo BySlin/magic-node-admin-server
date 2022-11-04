@@ -153,7 +153,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 21:22:26",
+  "updatedAt": "2022-11-04 16:34:30",
   "createdAt": "2022-11-03 20:02:24",
   "createdBy": "",
   "updatedBy": "",
@@ -163,7 +163,7 @@
 const checkSuperAdminIds = await importFunction('/auth/checkSuperAdminIds');
 const ids = query.ids.split(',');
 
-if (checkSuperAdminIds(ids)) {
+if (await checkSuperAdminIds(ids)) {
   exit(400, '禁止删除超级管理员!');
 }
 

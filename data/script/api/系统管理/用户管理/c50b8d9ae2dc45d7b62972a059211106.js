@@ -266,7 +266,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 22:53:43",
+  "updatedAt": "2022-11-04 16:35:52",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
@@ -281,7 +281,7 @@ const tenantId = ctx.user.tenantId;
 
 if (is_blank(body.tenantId)) {
   body.tenantId = tenantId;
-} else if (!checkTenantId(tenantId) && body.tenantId !== tenantId) {
+} else if (!(await checkTenantId(tenantId)) && body.tenantId !== tenantId) {
   exit(400, "禁止越权操作");
 }
 
