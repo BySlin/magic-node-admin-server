@@ -3,8 +3,8 @@
   "type": "function",
   "isFolder": false,
   "method": "Fn",
-  "fileName": "根据IDS判断是否超级管理员",
-  "path": "/checkSuperAdminIds",
+  "fileName": "根据用户IDS判断是否超级管理员",
+  "path": "/checkUserIdSuperAdmin",
   "description": "",
   "groupId": "9a0dde73dc7044d0a8af56bc900d4737",
   "fileLock": false,
@@ -24,7 +24,7 @@
       }
     ]
   },
-  "updatedAt": "2022-11-04 16:34:24",
+  "updatedAt": "2022-11-04 22:59:04",
   "createdAt": "2022-11-03 21:20:17",
   "createdBy": "",
   "updatedBy": "",

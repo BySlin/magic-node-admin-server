@@ -3,8 +3,8 @@
   "type": "function",
   "isFolder": false,
   "method": "Fn",
-  "fileName": "根据CODE判断是否超级管理员",
-  "path": "/checkSuperAdminCode",
+  "fileName": "根据角色IDS判断是否超级管理员",
+  "path": "/checkRoleIdSuperAdmin",
   "description": "",
   "groupId": "9a0dde73dc7044d0a8af56bc900d4737",
   "fileLock": false,
@@ -15,7 +15,7 @@
       {
         "description": "",
         "expression": "",
-        "key": "codes",
+        "key": "ids",
         "dataType": "Array",
         "required": false,
         "error": "",
@@ -24,13 +24,13 @@
       }
     ]
   },
-  "updatedAt": "2022-11-03 21:25:28",
-  "createdAt": "2022-11-03 21:22:51",
+  "updatedAt": "2022-11-04 23:00:38",
+  "createdAt": "2022-11-04 22:58:47",
   "createdBy": "",
   "updatedBy": "",
-  "id": "3a53b241630a466f8100ee6586de30f5"
+  "id": "62df1a4329de45c6908f7eb41c595a29"
 }
 ================================*/
-const SUPER_ADMIN_CODE = 'SUPER_ADMIN';
+const SUPER_ADMIN_ROLE_ID = '1123598816738675201';
 
-return codes.includes(SUPER_ADMIN_ID);
+return ids.includes(SUPER_ADMIN_ROLE_ID);
