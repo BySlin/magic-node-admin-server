@@ -80,6 +80,16 @@
         "error": "",
         "validateType": 0,
         "value": ""
+      },
+      {
+        "description": "",
+        "expression": "",
+        "key": "nickname",
+        "dataType": "String",
+        "required": false,
+        "error": "",
+        "validateType": 0,
+        "value": ""
       }
     ],
     "options": [],
@@ -379,7 +389,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-03 22:54:42",
+  "updatedAt": "2022-11-04 15:20:14",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
@@ -393,7 +403,8 @@ const table = db.table('sys_user')
   .where()
   .eq(not_blank(query.tenantId), 'tenantId', query.tenantId)
   .like(not_blank(query.username), 'username', `%${query.username}%`)
-  .like(not_blank(query.realname), 'realname', `%${query.realname}%`);
+  .like(not_blank(query.realname), 'realname', `%${query.realname}%`)
+  .like(not_blank(query.nickname), 'nickname', `%${query.nickname}%`);
 
 if (not_blank(query.deptId)) {
   const deptIds = query.deptId.split(',');
