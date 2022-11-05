@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Sat, 05 Nov 2022 03:59:09 GMT",
+          "value": "Sat, 05 Nov 2022 11:17:21 GMT",
           "description": ""
         },
         {
@@ -315,14 +315,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "5"
+          "value": "2"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"id\": \"743789983910854656\",\n    \"username\": \"admin\",\n    \"realname\": null,\n    \"nickname\": null,\n    \"avator\": \"https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png\",\n    \"tenantId\": \"000000\",\n    \"enabled\": 1,\n    \"roleIds\": [\n      \"1123598816738675201\"\n    ],\n    \"deptIds\": [\n      \"1123598813738675201\"\n    ],\n    \"dataPermission\": 0,\n    \"dataPermissionDeptIds\": [],\n    \"roleCodes\": [\n      \"SUPER_ADMIN\"\n    ],\n    \"permissions\": [\n      \"system\",\n      \"system:menu\",\n      \"system:role\",\n      \"system:menu:create\",\n      \"system:dept\",\n      \"system:dict\",\n      \"system:tenant\",\n      \"system:menu:update\",\n      \"system:role:create\",\n      \"system:role:update\",\n      \"system:dept:create\",\n      \"system:dept:update\",\n      \"system:dict:create\",\n      \"system:dict:update\",\n      \"system:tenant:create\",\n      \"system:tenant:update\",\n      \"system:menu:delete\",\n      \"system:menu:detail\",\n      \"system:role:delete\",\n      \"system:role:detail\",\n      \"system:dept:delete\",\n      \"system:dept:detail\",\n      \"system:dict:delete\",\n      \"system:dict:detail\",\n      \"system:tenant:delete\",\n      \"system:tenant:detail\"\n    ],\n    \"superAdmin\": true\n  },\n  \"executeTime\": 5\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"id\": \"743789983910854656\",\n    \"username\": \"admin\",\n    \"realname\": null,\n    \"nickname\": null,\n    \"avator\": \"https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png\",\n    \"tenantId\": \"000000\",\n    \"enabled\": 1,\n    \"roleIds\": [\n      \"1123598816738675201\"\n    ],\n    \"deptIds\": [\n      \"1123598813738675201\"\n    ],\n    \"dataPermission\": 0,\n    \"dataPermissionDeptIds\": [],\n    \"roleCodes\": [\n      \"SUPER_ADMIN\"\n    ],\n    \"permissions\": [\n      \"system\",\n      \"system:menu\",\n      \"system:role\",\n      \"system:menu:create\",\n      \"system:dept\",\n      \"system:dict\",\n      \"system:tenant\",\n      \"system:menu:update\",\n      \"system:role:create\",\n      \"system:role:update\",\n      \"system:dept:create\",\n      \"system:dept:update\",\n      \"system:dict:create\",\n      \"system:dict:update\",\n      \"system:tenant:create\",\n      \"system:tenant:update\",\n      \"system:menu:delete\",\n      \"system:menu:detail\",\n      \"system:role:delete\",\n      \"system:role:detail\",\n      \"system:dept:delete\",\n      \"system:dept:detail\",\n      \"system:dict:delete\",\n      \"system:dict:detail\",\n      \"system:tenant:delete\",\n      \"system:tenant:detail\"\n    ],\n    \"superAdmin\": true\n  },\n  \"executeTime\": 2\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -343,7 +343,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-05 11:59:29",
+  "updatedAt": "2022-11-05 19:17:21",
   "createdAt": "2022-10-23 17:54:03",
   "createdBy": "",
   "updatedBy": "",
