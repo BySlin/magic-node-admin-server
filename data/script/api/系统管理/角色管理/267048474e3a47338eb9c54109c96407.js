@@ -348,18 +348,22 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 22:29:23",
+  "updatedAt": "2022-11-05 22:50:46",
   "createdAt": "2022-10-29 15:43:58",
   "createdBy": "",
   "updatedBy": "",
   "id": "267048474e3a47338eb9c54109c96407"
 }
 ================================*/
+const checkSuperAdminTenantId = await importFunction('/auth/checkSuperAdminTenantId');
+const tenantId = ctx.user.tenantId;
+
 return await db.table('sys_role')
   .logic()
   .tenant()
   .where()
-  .eq(not_blank(query.tenantId), 'tenantId', query.tenantId)
+  //管理员租户才能筛选租户
+  .eq((await checkSuperAdminTenantId(tenantId)) && not_blank(query.tenantId), 'tenantId', query.tenantId)
   .like(not_blank(query.roleName), 'roleName', `%${query.roleName}%`)
   .like(not_blank(query.roleAlias), 'roleAlias', `%${query.roleAlias}%`)
   .orderByDesc('createdAt')

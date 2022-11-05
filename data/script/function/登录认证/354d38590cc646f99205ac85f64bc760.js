@@ -4,7 +4,7 @@
   "isFolder": false,
   "method": "Fn",
   "fileName": "判断是否超级管理员租户",
-  "path": "/checkTenantId",
+  "path": "/checkSuperAdminTenantId",
   "description": "",
   "groupId": "9a0dde73dc7044d0a8af56bc900d4737",
   "fileLock": false,
@@ -24,7 +24,7 @@
       }
     ]
   },
-  "updatedAt": "2022-11-03 21:25:30",
+  "updatedAt": "2022-11-05 22:49:22",
   "createdAt": "2022-11-03 21:24:15",
   "createdBy": "",
   "updatedBy": "",

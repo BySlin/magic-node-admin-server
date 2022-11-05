@@ -422,14 +422,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-05 22:42:27",
+  "updatedAt": "2022-11-05 22:50:14",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
   "id": "fdbcd5dc809e4c6ea2637ecc9bb97b06"
 }
 ================================*/
-const checkTenantId = await importFunction('/auth/checkTenantId');
+const checkSuperAdminTenantId = await importFunction('/auth/checkSuperAdminTenantId');
 
 const tenantId = ctx.user.tenantId;
 
@@ -477,7 +477,8 @@ ORDER BY
 `,
   query.pageSize, query.current,
   {
-    tenantId: (await checkTenantId(tenantId)) ? not_blank(query.tenantId) ? query.tenantId : undefined : undefined,
+    //管理员租户才能筛选租户
+    tenantId: ((await checkSuperAdminTenantId(tenantId)) && not_blank(query.tenantId)) ? query.tenantId : undefined,
     username: not_blank(query.username) ? `%${query.username}%` : undefined,
     realname: not_blank(query.realname) ? `%${query.realname}%` : undefined,
     nickname: not_blank(query.nickname) ? `%${query.nickname}%` : undefined,

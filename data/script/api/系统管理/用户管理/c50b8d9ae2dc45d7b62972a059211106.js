@@ -266,7 +266,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-05 22:28:44",
+  "updatedAt": "2022-11-05 22:49:39",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
@@ -274,7 +274,7 @@
 }
 ================================*/
 const clearPermissions = await importFunction('/auth/clearPermissions');
-const checkTenantId = await importFunction('/auth/checkTenantId');
+const checkSuperAdminTenantId = await importFunction('/auth/checkSuperAdminTenantId');
 //密码加密比较模块
 const passwordEncoder = await importModule('passwordEncoder');
 const isUpdate = not_blank(body.id);
@@ -282,7 +282,7 @@ const tenantId = ctx.user.tenantId;
 
 if (is_blank(body.tenantId)) {
   body.tenantId = tenantId;
-} else if (!(await checkTenantId(tenantId)) && body.tenantId !== tenantId) {
+} else if (!(await checkSuperAdminTenantId(tenantId)) && body.tenantId !== tenantId) {//管理员租户才能添加其他租户的用户
   exit(400, "禁止越权操作！");
 }
 
