@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 04 Nov 2022 15:02:55 GMT",
+          "value": "Sat, 05 Nov 2022 03:59:09 GMT",
           "description": ""
         },
         {
@@ -172,6 +172,52 @@
               "value": "1"
             },
             {
+              "children": [
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "-",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "1123598816738675201"
+                }
+              ],
+              "dataType": "Array",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "roleIds",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "-",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "1123598813738675201"
+                }
+              ],
+              "dataType": "Array",
+              "description": "",
+              "error": "",
+              "expression": "",
+              "key": "deptIds",
+              "required": false,
+              "validateType": 0,
+              "value": ""
+            },
+            {
               "children": [],
               "dataType": "Number",
               "description": "",
@@ -204,14 +250,14 @@
                   "key": "-",
                   "required": false,
                   "validateType": 0,
-                  "value": "1123598813738675201"
+                  "value": "SUPER_ADMIN"
                 }
               ],
               "dataType": "Array",
               "description": "",
               "error": "",
               "expression": "",
-              "key": "deptIds",
+              "key": "roleCodes",
               "required": false,
               "validateType": 0,
               "value": ""
@@ -249,52 +295,6 @@
               "required": false,
               "validateType": 0,
               "value": "true"
-            },
-            {
-              "children": [
-                {
-                  "children": [],
-                  "dataType": "String",
-                  "description": "",
-                  "error": "",
-                  "expression": "",
-                  "key": "-",
-                  "required": false,
-                  "validateType": 0,
-                  "value": "1123598816738675201"
-                }
-              ],
-              "dataType": "Array",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "roleIds",
-              "required": false,
-              "validateType": 0,
-              "value": ""
-            },
-            {
-              "children": [
-                {
-                  "children": [],
-                  "dataType": "String",
-                  "description": "",
-                  "error": "",
-                  "expression": "",
-                  "key": "-",
-                  "required": false,
-                  "validateType": 0,
-                  "value": "SUPER_ADMIN"
-                }
-              ],
-              "dataType": "Array",
-              "description": "",
-              "error": "",
-              "expression": "",
-              "key": "roleCodes",
-              "required": false,
-              "validateType": 0,
-              "value": ""
             }
           ],
           "dataType": "Object",
@@ -322,7 +322,7 @@
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"id\": \"743789983910854656\",\n    \"username\": \"admin\",\n    \"realname\": null,\n    \"nickname\": null,\n    \"avator\": \"https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png\",\n    \"tenantId\": \"000000\",\n    \"enabled\": 1,\n    \"dataPermission\": 0,\n    \"dataPermissionDeptIds\": [],\n    \"roleIds\": [\n      \"1123598816738675201\"\n    ],\n    \"deptIds\": [\n      \"1123598813738675201\"\n    ],\n    \"roleCodes\": [\n      \"SUPER_ADMIN\"\n    ],\n    \"permissions\": [\n      \"system\",\n      \"system:menu\",\n      \"system:role\",\n      \"system:menu:create\",\n      \"system:dept\",\n      \"system:dict\",\n      \"system:tenant\",\n      \"system:menu:update\",\n      \"system:role:create\",\n      \"system:role:update\",\n      \"system:dept:create\",\n      \"system:dept:update\",\n      \"system:dict:create\",\n      \"system:dict:update\",\n      \"system:tenant:create\",\n      \"system:tenant:update\",\n      \"system:menu:delete\",\n      \"system:menu:detail\",\n      \"system:role:delete\",\n      \"system:role:detail\",\n      \"system:dept:delete\",\n      \"system:dept:detail\",\n      \"system:dict:delete\",\n      \"system:dict:detail\",\n      \"system:tenant:delete\",\n      \"system:tenant:detail\"\n    ],\n    \"superAdmin\": true\n  },\n  \"executeTime\": 5\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"id\": \"743789983910854656\",\n    \"username\": \"admin\",\n    \"realname\": null,\n    \"nickname\": null,\n    \"avator\": \"https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png\",\n    \"tenantId\": \"000000\",\n    \"enabled\": 1,\n    \"roleIds\": [\n      \"1123598816738675201\"\n    ],\n    \"deptIds\": [\n      \"1123598813738675201\"\n    ],\n    \"dataPermission\": 0,\n    \"dataPermissionDeptIds\": [],\n    \"roleCodes\": [\n      \"SUPER_ADMIN\"\n    ],\n    \"permissions\": [\n      \"system\",\n      \"system:menu\",\n      \"system:role\",\n      \"system:menu:create\",\n      \"system:dept\",\n      \"system:dict\",\n      \"system:tenant\",\n      \"system:menu:update\",\n      \"system:role:create\",\n      \"system:role:update\",\n      \"system:dept:create\",\n      \"system:dept:update\",\n      \"system:dict:create\",\n      \"system:dict:update\",\n      \"system:tenant:create\",\n      \"system:tenant:update\",\n      \"system:menu:delete\",\n      \"system:menu:detail\",\n      \"system:role:delete\",\n      \"system:role:detail\",\n      \"system:dept:delete\",\n      \"system:dept:detail\",\n      \"system:dict:delete\",\n      \"system:dict:detail\",\n      \"system:tenant:delete\",\n      \"system:tenant:detail\"\n    ],\n    \"superAdmin\": true\n  },\n  \"executeTime\": 5\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -343,48 +343,22 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 23:02:55",
+  "updatedAt": "2022-11-05 11:59:29",
   "createdAt": "2022-10-23 17:54:03",
   "createdBy": "",
   "updatedBy": "",
   "id": "073808e78c6c4c2fb524846cca092604"
 }
 ================================*/
-const getDataPermission = await importFunction('/auth/getDataPermission');
-const checkRoleIdSuperAdmin = await importFunction('/auth/checkRoleIdSuperAdmin');
+const getPermissions = await importFunction('/auth/getPermissions');
 
 const userId = ctx.user.id;
-
 const avator = not_empty(ctx.user.avator) ? ctx.user.avator : 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png';
 
-const roleIds = (await db.table('sys_user_role').where().eq('userId', userId).select()).map(v => v.roleId);
-const deptIds = (await db.table('sys_user_dept').where().eq('userId', userId).select()).map(v => v.deptId);
-const roles = roleIds.length > 0 ? await db.table('sys_role').columns('id', 'roleName', 'roleAlias', 'permission').logic().where().in('id', roleIds).select() : [];
-const superAdmin = await checkRoleIdSuperAdmin(roleIds);
-const permissions = roleIds.length > 0 ? (await db.table('sys_menu')
-  .column('code')
-  .logic()
-  .where()
-  .custom(!superAdmin, `id in ( SELECT menuId FROM sys_role_menu WHERE roleId IN ( ${Array.from({ length: roleIds.length })
-    .map(() => '?')
-    .join(',')} ) )`, roleIds)
-  .select()).map(v => v.code) : [];
-const dataPermission = await getDataPermission(roles.map(r => r.permission));
-const roleCodes = roles.map(r => r.roleAlias);
-let dataPermissionDeptIds = [];
-
-if (dataPermission === 4) {
-  dataPermissionDeptIds = roleIds.length > 0 ? (await db.table('sys_role_dept').column('deptId').where().in('roleId', roleIds)).map(v => v.deptId) : [];
-}
+const permissions = await getPermissions(userId);
 
 return {
   ...ctx.user,
-  dataPermission,
-  dataPermissionDeptIds,
   avator,
-  roleIds,
-  deptIds,
-  roleCodes,
-  permissions,
-  superAdmin
+  ...permissions
 };

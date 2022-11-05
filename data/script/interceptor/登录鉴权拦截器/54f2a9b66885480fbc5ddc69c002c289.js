@@ -13,11 +13,16 @@
   "definition": {
     "sort": 1
   },
-  "updatedAt": "",
+  "updatedAt": "2022-11-05 11:24:26",
   "createdAt": "2022-11-04 21:27:55",
   "createdBy": "",
   "updatedBy": "",
   "id": "54f2a9b66885480fbc5ddc69c002c289"
 }
 ================================*/
+//匿名访问的接口直接跳过
+if (route.options.anonymous) {
+  return await next();
+}
+
 return await next();
