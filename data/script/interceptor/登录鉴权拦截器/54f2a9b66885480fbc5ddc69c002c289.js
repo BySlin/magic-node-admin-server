@@ -13,16 +13,20 @@
   "definition": {
     "sort": 1
   },
-  "updatedAt": "2022-11-05 11:24:26",
+  "updatedAt": "2022-11-05 22:59:49",
   "createdAt": "2022-11-04 21:27:55",
   "createdBy": "",
   "updatedBy": "",
   "id": "54f2a9b66885480fbc5ddc69c002c289"
 }
 ================================*/
+const getPermissions = await importFunction('/auth/getPermissions');
+
 //匿名访问的接口直接跳过
 if (route.options.anonymous) {
   return await next();
 }
+
+const permissions = await getPermissions(ctx.user.id);
 
 return await next();

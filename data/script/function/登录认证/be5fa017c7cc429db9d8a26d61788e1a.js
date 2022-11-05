@@ -24,7 +24,7 @@
       }
     ]
   },
-  "updatedAt": "2022-11-05 19:16:14",
+  "updatedAt": "2022-11-06 00:09:09",
   "createdAt": "2022-11-05 11:25:28",
   "createdBy": "",
   "updatedBy": "",
@@ -52,7 +52,7 @@ return await cache.get(`user:permission:${userId}`, async () => {
   let dataPermissionDeptIds = [];
 
   if (dataPermission === 4) {
-    dataPermissionDeptIds = roleIds.length > 0 ? (await db.table('sys_role_dept').column('deptId').where().in('roleId', roleIds)).map(v => v.deptId) : [];
+    dataPermissionDeptIds = roleIds.length > 0 ? (await db.table('sys_role_dept').column('deptId').where().in('roleId', roleIds).select()).map(v => v.deptId) : [];
   }
   return {
     roleIds,
