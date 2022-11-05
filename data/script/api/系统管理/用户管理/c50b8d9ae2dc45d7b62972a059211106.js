@@ -266,7 +266,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-05 21:11:18",
+  "updatedAt": "2022-11-05 22:28:44",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
@@ -300,6 +300,9 @@ if (isUpdate) {
 return await db.transaction(async () => {
   const deptIds = not_blank(body.deptId) ? body.deptId.split(',') : [];
   const roleIds = not_blank(body.roleId) ? body.roleId.split(',') : [];
+
+  delete body.roleId;
+  delete body.deptId;
 
   const result = await db.table("sys_user").primary("id").withBlank().saveOrUpdate(body);
   const userId = isUpdate ? body.id : result;

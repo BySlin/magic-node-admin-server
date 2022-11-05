@@ -59,7 +59,7 @@
         "required": false,
         "error": "",
         "validateType": 0,
-        "value": "748179393636990976"
+        "value": ""
       },
       {
         "description": "",
@@ -118,7 +118,7 @@
         },
         {
           "key": "content-length",
-          "value": "770",
+          "value": "1381",
           "description": ""
         },
         {
@@ -128,7 +128,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 04 Nov 2022 13:52:15 GMT",
+          "value": "Sat, 05 Nov 2022 14:27:11 GMT",
           "description": ""
         },
         {
@@ -197,7 +197,7 @@
               "key": "total",
               "required": false,
               "validateType": 0,
-              "value": "1"
+              "value": "3"
             },
             {
               "children": [
@@ -212,7 +212,7 @@
                       "key": "id",
                       "required": false,
                       "validateType": 0,
-                      "value": "751993076452425728"
+                      "value": "743789983910854656"
                     },
                     {
                       "children": [],
@@ -223,7 +223,18 @@
                       "key": "username",
                       "required": false,
                       "validateType": 0,
-                      "value": "test"
+                      "value": "admin"
+                    },
+                    {
+                      "children": [],
+                      "dataType": "String",
+                      "description": "",
+                      "error": "",
+                      "expression": "",
+                      "key": "password",
+                      "required": false,
+                      "validateType": 0,
+                      "value": "{bcrypt}$2a$10$QsVO2LZvjWjPkOsZciVHbO9PvPoVZD1gr5BI2.o4a3AWRFBX19ktq"
                     },
                     {
                       "children": [],
@@ -293,25 +304,25 @@
                     },
                     {
                       "children": [],
-                      "dataType": "String",
+                      "dataType": "Object",
                       "description": "",
                       "error": "",
                       "expression": "",
                       "key": "createdBy",
                       "required": false,
                       "validateType": 0,
-                      "value": "743789983910854656"
+                      "value": ""
                     },
                     {
                       "children": [],
-                      "dataType": "Object",
+                      "dataType": "String",
                       "description": "",
                       "error": "",
                       "expression": "",
                       "key": "updatedBy",
                       "required": false,
                       "validateType": 0,
-                      "value": ""
+                      "value": "743789983910854656"
                     },
                     {
                       "children": [],
@@ -322,18 +333,40 @@
                       "key": "createdAt",
                       "required": false,
                       "validateType": 0,
-                      "value": "2022-11-03T13:16:00.000Z"
+                      "value": "2022-10-23T05:37:55.000Z"
                     },
                     {
                       "children": [],
-                      "dataType": "Object",
+                      "dataType": "String",
                       "description": "",
                       "error": "",
                       "expression": "",
                       "key": "updatedAt",
                       "required": false,
                       "validateType": 0,
-                      "value": ""
+                      "value": "2022-11-04T13:56:55.000Z"
+                    },
+                    {
+                      "children": [],
+                      "dataType": "String",
+                      "description": "",
+                      "error": "",
+                      "expression": "",
+                      "key": "roleId",
+                      "required": false,
+                      "validateType": 0,
+                      "value": "1123598816738675201"
+                    },
+                    {
+                      "children": [],
+                      "dataType": "String",
+                      "description": "",
+                      "error": "",
+                      "expression": "",
+                      "key": "deptId",
+                      "required": false,
+                      "validateType": 0,
+                      "value": "1123598813738675201"
                     }
                   ],
                   "dataType": "Object",
@@ -374,14 +407,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "7"
+          "value": "9"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 2,\n    \"list\": [\n      {\n        \"id\": \"752042257804165120\",\n        \"username\": \"test\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": \"748206733620412416\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-03T14:53:43.000Z\",\n        \"updatedAt\": \"2022-11-04T06:43:39.000Z\"\n      },\n      {\n        \"id\": \"752520938813128704\",\n        \"username\": \"test11\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"deptId\": \"748179393636990976\",\n        \"roleId\": \"748206733620412416\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-04T06:44:46.000Z\",\n        \"updatedAt\": \"2022-11-04T07:17:41.000Z\"\n      }\n    ]\n  },\n  \"executeTime\": 7\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": {\n    \"total\": 3,\n    \"list\": [\n      {\n        \"id\": \"743789983910854656\",\n        \"username\": \"admin\",\n        \"password\": \"{bcrypt}$2a$10$QsVO2LZvjWjPkOsZciVHbO9PvPoVZD1gr5BI2.o4a3AWRFBX19ktq\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": null,\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-10-23T05:37:55.000Z\",\n        \"updatedAt\": \"2022-11-04T13:56:55.000Z\",\n        \"roleId\": \"1123598816738675201\",\n        \"deptId\": \"1123598813738675201\"\n      },\n      {\n        \"id\": \"752042257804165120\",\n        \"username\": \"test\",\n        \"password\": \"{bcrypt}$2a$10$Zlq8bDWI4sh1XAupyyXbkemoSWC9oayGdEnrg0gBG3d8C0uxITEH2\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-03T14:53:43.000Z\",\n        \"updatedAt\": \"2022-11-05T13:34:07.000Z\",\n        \"roleId\": \"748206733620412416,752754659172548608\",\n        \"deptId\": \"748179393636990976,748179393636990976\"\n      },\n      {\n        \"id\": \"752520938813128704\",\n        \"username\": \"test11\",\n        \"password\": \"{bcrypt}$2a$10$fDf2Z16XnRJkuBHPiCP7reVUrQavhYiRrNQH10IpkAjnAIrl0BtdO\",\n        \"realname\": null,\n        \"nickname\": null,\n        \"avator\": null,\n        \"tenantId\": \"000000\",\n        \"enabled\": 1,\n        \"deleted\": 0,\n        \"createdBy\": \"743789983910854656\",\n        \"updatedBy\": \"743789983910854656\",\n        \"createdAt\": \"2022-11-04T06:44:46.000Z\",\n        \"updatedAt\": \"2022-11-04T07:17:41.000Z\",\n        \"roleId\": \"748206733620412416\",\n        \"deptId\": \"748179393636990976\"\n      }\n    ]\n  },\n  \"executeTime\": 9\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -389,37 +422,63 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 21:52:57",
+  "updatedAt": "2022-11-05 22:27:41",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
   "id": "fdbcd5dc809e4c6ea2637ecc9bb97b06"
 }
 ================================*/
-const table = db.table('sys_user')
-  .excludes('password')
-  .logic()
-  .tenant()
-  .where()
-  .eq(not_blank(query.tenantId), 'tenantId', query.tenantId)
-  .like(not_blank(query.username), 'username', `%${query.username}%`)
-  .like(not_blank(query.realname), 'realname', `%${query.realname}%`)
-  .like(not_blank(query.nickname), 'nickname', `%${query.nickname}%`);
+const checkTenantId = await importFunction('/auth/checkTenantId');
 
-if (not_blank(query.deptId)) {
-  const deptIds = query.deptId.split(',');
-  table.custom(`id in ( SELECT userId FROM sys_user_dept WHERE deptId IN ( ${Array.from({ length: deptIds.length })
-    .map(() => '?')
-    .join(',')} ) )`, deptIds);
-}
+const tenantId = ctx.user.tenantId;
 
-if (not_blank(query.roleId)) {
-  const roleIds = query.roleId.split(',');
-  table.custom(`id in ( SELECT userId FROM sys_user_role WHERE roleId IN ( ${Array.from({ length: roleIds.length })
-    .map(() => '?')
-    .join(',')} ) )`, roleIds);
-}
-
-return await table
-  .orderBy('createdAt')
-  .page(query.pageSize, query.current);
+return await db.page(`
+SELECT
+	u.*,
+	GROUP_CONCAT( ur.roleId SEPARATOR ',' ) AS roleId,
+	GROUP_CONCAT( ud.deptId SEPARATOR ',' ) AS deptId 
+FROM
+	sys_user AS u
+	LEFT JOIN sys_user_role AS ur ON u.id = ur.userId
+	LEFT JOIN sys_user_dept AS ud ON u.id = ud.userId 
+WHERE
+  u.deleted = 0
+  <if test="tenantId != null">
+    and u.tenantId = #{tenantId}
+  </if>
+  <if test="username != null">
+    and u.username like #{username}
+  </if>
+  <if test="nickname != null">
+    and u.nickname like #{nickname}
+  </if>
+  <if test="realname != null">
+    and u.realname like #{realname}
+  </if>
+  <if test="deptIds != null and deptIds.length > 0">
+    and u.id in ( SELECT userId FROM sys_user_dept WHERE deptId IN
+    <foreach item='item' index='index' collection='deptIds' open="(" separator="," close=")">
+        #{item}
+    </foreach>
+  </if>
+  <if test="roleIds != null and roleIds.length > 0">
+    and u.id in ( SELECT userId FROM sys_user_role WHERE roleId IN
+    <foreach item='item' index='index' collection='roleIds' open="(" separator="," close=")">
+        #{item}
+    </foreach>
+  </if>
+GROUP BY
+	u.id 
+ORDER BY
+	u.createdAt ASC
+`,
+  query.pageSize, query.current,
+  {
+    tenantId: (await checkTenantId(tenantId)) ? not_blank(query.tenantId) ? query.tenantId : undefined : undefined,
+    username: not_blank(query.username) ? `%${query.username}%` : undefined,
+    realname: not_blank(query.realname) ? `%${query.realname}%` : undefined,
+    nickname: not_blank(query.nickname) ? `%${query.nickname}%` : undefined,
+    deptIds: not_blank(query.deptId) ? query.deptId.split(',') : [],
+    roleIds: not_blank(query.roleId) ? query.roleId.split(',') : [],
+  });
