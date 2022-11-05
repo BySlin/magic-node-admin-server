@@ -422,7 +422,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-05 22:27:41",
+  "updatedAt": "2022-11-05 22:42:27",
   "createdAt": "2022-11-03 20:03:26",
   "createdBy": "",
   "updatedBy": "",
@@ -461,12 +461,14 @@ WHERE
     <foreach item='item' index='index' collection='deptIds' open="(" separator="," close=")">
         #{item}
     </foreach>
+    )
   </if>
   <if test="roleIds != null and roleIds.length > 0">
     and u.id in ( SELECT userId FROM sys_user_role WHERE roleId IN
-    <foreach item='item' index='index' collection='roleIds' open="(" separator="," close=")">
-        #{item}
-    </foreach>
+      <foreach item='item' index='index' collection='roleIds' open="(" separator="," close=")">
+          #{item}
+      </foreach>
+    )
   </if>
 GROUP BY
 	u.id 
