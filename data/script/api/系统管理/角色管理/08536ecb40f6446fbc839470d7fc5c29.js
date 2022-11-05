@@ -166,13 +166,20 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-01 17:39:09",
+  "updatedAt": "2022-11-05 21:18:54",
   "createdAt": "2022-10-29 15:50:59",
   "createdBy": "",
   "updatedBy": "",
   "id": "08536ecb40f6446fbc839470d7fc5c29"
 }
 ================================*/
+const clearPermissionsByRoleIds = await importFunction('/auth/clearPermissionsByRoleIds');
 const ids = query.ids.split(',');
 
-return await db.table("sys_role").logic().tenant().where().in("id", ids).delete();
+return await db.transaction(async () => {
+  await db.table('sys_user_role').where().in("roleId", ids).delete();
+  await db.table('sys_role_dept').where().in("roleId", ids).delete();
+  await db.table('sys_role_menu').where().in("roleId", ids).delete();
+  await clearPermissionsByRoleIds(ids);
+  return await db.table("sys_role").logic().tenant().where().in("id", ids).delete();
+});

@@ -153,13 +153,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 22:59:29",
+  "updatedAt": "2022-11-05 21:16:12",
   "createdAt": "2022-11-03 20:02:24",
   "createdBy": "",
   "updatedBy": "",
   "id": "532644fae7b747f0a5fb737a7ededb23"
 }
 ================================*/
+const clearPermissions = await importFunction('/auth/clearPermissions');
 const checkUserIdSuperAdmin = await importFunction('/auth/checkUserIdSuperAdmin');
 const ids = query.ids.split(',');
 
@@ -167,4 +168,10 @@ if (await checkUserIdSuperAdmin(ids)) {
   exit(400, '禁止删除超级管理员!');
 }
 
-return await db.table("sys_user").logic().tenant().where().in("id", ids).delete();
+return await db.transaction(async () => {
+  await db.table('sys_user_role').where().in("userId", ids).delete();
+  await db.table('sys_user_dept').where().in("userId", ids).delete();
+
+  await clearPermissions(ids);
+  return await db.table("sys_user").logic().tenant().where().in("id", ids).delete();
+});

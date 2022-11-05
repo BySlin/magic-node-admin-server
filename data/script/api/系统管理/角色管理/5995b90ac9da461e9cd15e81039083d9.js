@@ -279,16 +279,16 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-01 19:35:54",
+  "updatedAt": "2022-11-05 21:18:20",
   "createdAt": "2022-10-25 16:39:47",
   "createdBy": "",
   "updatedBy": "",
   "id": "5995b90ac9da461e9cd15e81039083d9"
 }
 ================================*/
-const cacheDelete = await importFunction('/system/role/cache/delete');
+const clearPermissionsByRoleIds = await importFunction('/auth/clearPermissionsByRoleIds');
 
-body.tenantId = ctx.user.tenantId;
+const isUpdate = not_blank(body.id);
 
 if (body.roleAlias) {
   const roleAliasCount = await db.table('sys_role')
@@ -310,8 +310,8 @@ return await db.transaction(async () => {
   delete body.deptIds;
   delete body.menuIds;
 
-  const result = await db.table("sys_role").primary("id").withBlank().saveOrUpdate(body);
-  const roleId = not_blank(body.id) ? body.id : result;
+  const result = await db.table("sys_role").tenant().primary("id").withBlank().saveOrUpdate(body);
+  const roleId = isUpdate ? body.id : result;
 
   await db.table('sys_role_menu').where().eq('roleId', roleId).delete();
 
@@ -330,6 +330,11 @@ return await db.transaction(async () => {
       deptId,
       roleId
     })));
+  }
+
+
+  if (isUpdate) {
+    await clearPermissionsByRoleIds([roleId]);
   }
 
   return result;

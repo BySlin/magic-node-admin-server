@@ -153,13 +153,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 02:29:52",
+  "updatedAt": "2022-11-05 21:21:54",
   "createdAt": "2022-10-29 02:25:20",
   "createdBy": "",
   "updatedBy": "",
   "id": "9266c7212b1d4aa8b86b643a4b3987f4"
 }
 ================================*/
+const clearPermissionsByDeptIds = await importFunction('/auth/clearPermissionsByDeptIds');
 const ids = query.ids.split(',');
 
 const deptCount = await db.table('sys_dept')
@@ -170,5 +171,9 @@ const deptCount = await db.table('sys_dept')
 if (deptCount > 0) {
   exit(400, '请先删除子节点!');
 }
-
-return await db.table("sys_dept").logic().where().in("id", ids).delete();
+return await db.transaction(async () => {
+  await db.table('sys_role_dept').where().in("deptId", ids).delete();
+  await db.table('sys_user_dept').where().in("deptId", ids).delete();
+  await clearPermissionsByDeptIds(ids);
+  return await db.table("sys_dept").logic().where().in("id", ids).delete();
+});

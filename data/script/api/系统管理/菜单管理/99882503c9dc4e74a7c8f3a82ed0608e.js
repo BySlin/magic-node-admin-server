@@ -159,7 +159,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 02:29:18",
+  "updatedAt": "2022-11-05 21:28:53",
   "createdAt": "2022-10-24 22:23:19",
   "createdBy": "",
   "updatedBy": "",
@@ -176,12 +176,11 @@ const menuCount = await db.table('sys_menu')
 if (menuCount > 0) {
   exit(400, '请先删除子节点!');
 }
+const clearPermissionsByMenuIds = await importFunction('/auth/clearPermissionsByMenuIds');
 
-const menuCacheDelete = await importFunction('/system/menu/cache/delete');
+return await db.transaction(async () => {
+  await db.table('sys_role_menu').where().in("menuId", ids).delete();
+  await clearPermissionsByMenuIds(ids);
 
-ids.forEach(async id => {
-  await menuCacheDelete(query.id);
+  return await db.table("sys_menu").logic().where().in("id", ids).delete();
 });
-
-// db.table('sys_role_menu').where().eq("menu_id", id).delete();
-return await db.table("sys_menu").logic().where().in("id", ids).delete();

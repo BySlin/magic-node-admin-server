@@ -266,13 +266,14 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 22:00:34",
+  "updatedAt": "2022-11-05 21:11:18",
   "createdAt": "2022-11-03 20:01:57",
   "createdBy": "",
   "updatedBy": "",
   "id": "c50b8d9ae2dc45d7b62972a059211106"
 }
 ================================*/
+const clearPermissions = await importFunction('/auth/clearPermissions');
 const checkTenantId = await importFunction('/auth/checkTenantId');
 //密码加密比较模块
 const passwordEncoder = await importModule('passwordEncoder');
@@ -291,6 +292,7 @@ if (exists) {
 }
 
 if (isUpdate) {
+  delete body.username;
   delete body.password;
 } else {
   body.password = passwordEncoder.encrypt(body.password);
@@ -319,6 +321,10 @@ return await db.transaction(async () => {
       userId,
       deptId
     })));
+  }
+
+  if (isUpdate) {
+    await clearPermissions([userId]);
   }
 
   return result;
