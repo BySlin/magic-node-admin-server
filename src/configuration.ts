@@ -1,4 +1,4 @@
-import { Configuration, App } from '@midwayjs/decorator';
+import { App, Configuration, ILifeCycle } from '@midwayjs/core';
 import * as koa from '@midwayjs/koa';
 import * as validate from '@midwayjs/validate';
 import * as info from '@midwayjs/info';
@@ -8,11 +8,10 @@ import * as jwt from '@midwayjs/jwt';
 import * as captcha from '@midwayjs/captcha';
 
 import * as mn from 'magic-node';
+import { SQLModule } from 'magic-node';
 
 import { join } from 'path';
-import { SQLModule } from 'magic-node';
 import { MagicNamedTableInterceptor } from './interceptor/MagicNamedTableInterceptor';
-import { ILifeCycle } from '@midwayjs/core';
 
 @Configuration({
   imports: [
