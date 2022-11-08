@@ -24,7 +24,7 @@
         },
         {
           "key": "content-length",
-          "value": "286",
+          "value": "140",
           "description": ""
         },
         {
@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 04 Nov 2022 13:26:31 GMT",
+          "value": "Tue, 08 Nov 2022 13:05:49 GMT",
           "description": ""
         },
         {
@@ -101,7 +101,7 @@
           "key": "data",
           "required": false,
           "validateType": 0,
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsImlhdCI6MTY2NzU2ODI3MiwiZXhwIjoxNjY3NjU0NjcyfQ.SgagtmqG5uvhT8qGsU9se9f_l0E99bPSfbFD8qlbOBA"
+          "value": "{bcrypt}$2a$10$pJp0F5NzHqUw3X21DeObZucZAbmrE.iKoQnWBvId1qR08AqVGngiC"
         },
         {
           "children": [],
@@ -112,14 +112,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "71"
+          "value": "149"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Mzc4OTk4MzkxMDg1NDY1NiIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsImlhdCI6MTY2NzU2ODI3MiwiZXhwIjoxNjY3NjU0NjcyfQ.SgagtmqG5uvhT8qGsU9se9f_l0E99bPSfbFD8qlbOBA\",\n  \"executeTime\": 71\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": \"{bcrypt}$2a$10$pJp0F5NzHqUw3X21DeObZucZAbmrE.iKoQnWBvId1qR08AqVGngiC\",\n  \"executeTime\": 149\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -140,7 +140,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-11-04 21:27:03",
+  "updatedAt": "2022-11-08 21:05:49",
   "createdAt": "2022-10-22 16:43:16",
   "createdBy": "",
   "updatedBy": "",
