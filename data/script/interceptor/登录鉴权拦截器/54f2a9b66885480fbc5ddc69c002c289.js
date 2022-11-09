@@ -13,7 +13,7 @@
   "definition": {
     "sort": 1
   },
-  "updatedAt": "2022-11-08 21:05:38",
+  "updatedAt": "2022-11-09 13:57:58",
   "createdAt": "2022-11-04 21:27:55",
   "createdBy": "",
   "updatedBy": "",
@@ -30,21 +30,22 @@ if (options.anonymous) {
   return await next();
 }
 
-const { permissions, roleCodes } = await getPermissions(ctx.user.id);
+const { permissions, roleCodes, superAdmin } = await getPermissions(ctx.user.id);
 
-if (not_blank(options.role)) {
-  if (roleCodes.includes(options.role)) {
-    return await next();
+if (!superAdmin) {
+  if (not_blank(options.role)) {
+    if (roleCodes.includes(options.role)) {
+      return await next();
+    }
+    throw new httpError.ForbiddenError('权限不足！');
   }
-  throw new httpError.ForbiddenError('权限不足！');
-}
 
-if (not_blank(options.permission)) {
-  if (permissions.includes(options.permission)) {
-    return await next();
+  if (not_blank(options.permission)) {
+    if (permissions.includes(options.permission)) {
+      return await next();
+    }
+    throw new httpError.ForbiddenError('权限不足！');
   }
-  throw new httpError.ForbiddenError('权限不足！');
 }
-
 
 return await next();

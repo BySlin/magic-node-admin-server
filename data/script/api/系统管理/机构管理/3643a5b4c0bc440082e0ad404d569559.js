@@ -24,7 +24,7 @@
         },
         {
           "key": "content-length",
-          "value": "684",
+          "value": "1173",
           "description": ""
         },
         {
@@ -34,7 +34,7 @@
         },
         {
           "key": "date",
-          "value": "Fri, 28 Oct 2022 18:29:46 GMT",
+          "value": "Wed, 09 Nov 2022 05:46:28 GMT",
           "description": ""
         },
         {
@@ -207,135 +207,45 @@
                   "value": "0"
                 },
                 {
-                  "children": [
-                    {
-                      "children": [
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "id",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "1123598813738675202"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "tenantId",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "000000"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "parentId",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "1123598813738675201"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "ancestors",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "0,1123598813738675201"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "Number",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "deptCategory",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "1"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "deptName",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "常州刀锋"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "String",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "fullName",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "常州刀锋科技有限公司"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "Number",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "sort",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "1"
-                        },
-                        {
-                          "children": [],
-                          "dataType": "Object",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "remark",
-                          "required": false,
-                          "validateType": 0,
-                          "value": ""
-                        },
-                        {
-                          "children": [],
-                          "dataType": "Number",
-                          "description": "",
-                          "error": "",
-                          "expression": "",
-                          "key": "deleted",
-                          "required": false,
-                          "validateType": 0,
-                          "value": "0"
-                        }
-                      ],
-                      "dataType": "Object",
-                      "description": "",
-                      "error": "",
-                      "expression": "",
-                      "key": "-",
-                      "required": false,
-                      "validateType": 0,
-                      "value": ""
-                    }
-                  ],
-                  "dataType": "Array",
+                  "children": [],
+                  "dataType": "String",
                   "description": "",
                   "error": "",
                   "expression": "",
-                  "key": "children",
+                  "key": "createdBy",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "743789983910854656"
+                },
+                {
+                  "children": [],
+                  "dataType": "Object",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "updatedBy",
+                  "required": false,
+                  "validateType": 0,
+                  "value": ""
+                },
+                {
+                  "children": [],
+                  "dataType": "String",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "createdAt",
+                  "required": false,
+                  "validateType": 0,
+                  "value": "2022-10-29T06:58:53.000Z"
+                },
+                {
+                  "children": [],
+                  "dataType": "Object",
+                  "description": "",
+                  "error": "",
+                  "expression": "",
+                  "key": "updatedAt",
                   "required": false,
                   "validateType": 0,
                   "value": ""
@@ -369,14 +279,14 @@
           "key": "executeTime",
           "required": false,
           "validateType": 0,
-          "value": "3"
+          "value": "76"
         }
       ],
       "dataType": "Object",
       "description": "",
       "error": "",
       "expression": "",
-      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"MagicNodeTeam\",\n      \"fullName\": \"MagicNodeTeam\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team1\",\n          \"fullName\": \"Team1\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team2\",\n          \"fullName\": \"Team2\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 3\n}",
+      "json": "{\n  \"code\": \"200\",\n  \"success\": true,\n  \"message\": \"OK\",\n  \"data\": [\n    {\n      \"id\": \"748179393636990976\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": null,\n      \"deptCategory\": 1,\n      \"deptName\": \"测试\",\n      \"fullName\": \"测试公司\",\n      \"sort\": 0,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"createdBy\": \"743789983910854656\",\n      \"updatedBy\": null,\n      \"createdAt\": \"2022-10-29T06:58:53.000Z\",\n      \"updatedAt\": null\n    },\n    {\n      \"id\": \"1123598813738675201\",\n      \"tenantId\": \"000000\",\n      \"parentId\": \"0\",\n      \"ancestors\": \"0\",\n      \"deptCategory\": 1,\n      \"deptName\": \"MagicNodeTeam\",\n      \"fullName\": \"MagicNodeTeam\",\n      \"sort\": 1,\n      \"remark\": null,\n      \"deleted\": 0,\n      \"createdBy\": null,\n      \"updatedBy\": null,\n      \"createdAt\": null,\n      \"updatedAt\": null,\n      \"children\": [\n        {\n          \"id\": \"1123598813738675202\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team1\",\n          \"fullName\": \"Team1\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0,\n          \"createdBy\": null,\n          \"updatedBy\": null,\n          \"createdAt\": null,\n          \"updatedAt\": null\n        },\n        {\n          \"id\": \"1123598813738675203\",\n          \"tenantId\": \"000000\",\n          \"parentId\": \"1123598813738675201\",\n          \"ancestors\": \"0,1123598813738675201\",\n          \"deptCategory\": 1,\n          \"deptName\": \"Team2\",\n          \"fullName\": \"Team2\",\n          \"sort\": 1,\n          \"remark\": null,\n          \"deleted\": 0,\n          \"createdBy\": null,\n          \"updatedBy\": null,\n          \"createdAt\": null,\n          \"updatedAt\": null\n        }\n      ]\n    }\n  ],\n  \"executeTime\": 76\n}",
       "key": "",
       "required": false,
       "validateType": 0,
@@ -384,7 +294,7 @@
     }
   },
   "returnType": "",
-  "updatedAt": "2022-10-29 15:54:50",
+  "updatedAt": "2022-11-09 13:46:28",
   "createdAt": "2022-10-28 23:35:43",
   "createdBy": "",
   "updatedBy": "",
